@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Imen Jdey - Computer Science Researcher</title>
+    <style>
+        /* General & Body */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #333333;
+            background: #f8f8f5;
+            min-height: 100vh;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, #003366 0%, #336699 100%);
+            color: white;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #002244 0%, #336699 100%);
+            border: 6px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            flex-shrink: 0;
+        }
+
+        .profile-details h1 {
+            font-size: 3.5em;
+            font-weight: 300;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .profile-details .title {
+            font-size: 1.4em;
+            opacity: 0.9;
+            margin-bottom: 8px;
+            font-weight: 300;
+        }
+
+        .profile-details .institution {
+            font-size: 1.1em;
+            opacity: 0.8;
+            font-style: italic;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 15px 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .contact-icon {
+            font-size: 1.2em;
+            width: 24px;
+            text-align: center;
+        }
+
+        /* Navigation */
+        .navigation {
+            background: white;
+            box-shadow: 0 2px 20px rgba(0, 51, 102, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0;
+        }
+
+        .nav-btn {
+            background: none;
+            border: none;
+            padding: 20px 30px;
+            font-size: 1em;
+            font-weight: 500;
+            color: #64748b;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+            font-family: inherit;
+        }
+
+        .nav-btn:hover {
+            color: #003366;
+            border-bottom-color: #93c5fd;
+        }
+
+        .nav-btn.active {
+            color: #003366;
+            border-bottom-color: #003366;
+            background: rgba(0, 51, 102, 0.05);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .content-section {
+            display: none;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            font-weight: 300;
+            color: #003366;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #336699, #60a5fa);
+            border-radius: 2px;
+        }
+
+        /* Card Styles */
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 25px rgba(0, 51, 102, 0.08);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #003366 0%, #336699 100%);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0, 51, 102, 0.15);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .card-title {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #003366;
+            margin-bottom: 5px;
+        }
+
+        .card-subtitle {
+            font-size: 1.1em;
+            color: #64748b;
+            font-style: italic;
+        }
+
+        .card-date {
+            background: linear-gradient(135deg, #003366 0%, #336699 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .card-content {
+            color: #475569;
+            line-height: 1.7;
+        }
+
+        /* Research Areas Grid */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .research-area {
+            background: white;
+            border-radius: 15px;
+            padding: 35px;
+            text-align: center;
+            box-shadow: 0 5px 25px rgba(0, 51, 102, 0.08);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .research-area::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #003366, #336699);
+            border-radius: 15px 15px 0 0;
+        }
+
+        .research-area:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 51, 102, 0.15);
+        }
+
+        .research-icon {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            color: #336699;
+        }
+
+        .research-area h3 {
+            font-size: 1.4em;
+            color: #003366;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .research-area p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* About Section Styles */
+        .intro-text {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 25px rgba(0, 51, 102, 0.08);
+            border: 1px solid #e2e8f0;
+            text-align: center;
+        }
+
+        .intro-text p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #475569;
+            margin-bottom: 20px;
+        }
+
+        /* Stats Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .stat-item {
+            background: linear-gradient(135deg, #003366 0%, #336699 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 51, 102, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: 300;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Skills and Tags */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-category {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 25px rgba(0, 51, 102, 0.08);
+            border: 1px solid #e2e8f0;
+        }
+
+        .skill-category h3 {
+            color: #003366;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #003366 0%, #336699 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        /* Publications List */
+        .publications-list {
+            max-height: 700px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .publications-list::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .publications-list::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 10px;
+        }
+
+        .publications-list::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #003366 0%, #336699 100%);
+            border-radius: 10px;
+        }
+
+        .publication-item {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 4px solid #336699;
+            box-shadow: 0 3px 15px rgba(0, 51, 102, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .publication-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 25px rgba(0, 51, 102, 0.12);
+        }
+
+        .pub-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #003366;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .pub-authors {
+            color: #64748b;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        .pub-journal {
+            background: rgba(0, 51, 102, 0.1);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            color: #003366;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            background: #003366;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        .footer p {
+            opacity: 0.9;
+            font-size: 0.9em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-image {
+                width: 120px;
+                height: 120px;
+                font-size: 48px;
+            }
+
+            .profile-details h1 {
+                font-size: 2.5em;
+            }
+
+            .nav-menu {
+                flex-direction: column;
+            }
+
+            .nav-btn {
+                width: 100%;
+                text-align: center;
+                padding: 15px;
+                border-bottom: 1px solid #e2e8f0;
+                border-radius: 0;
+            }
+
+            .nav-btn.active {
+                border-left: 4px solid #003366;
+                border-bottom: 1px solid #e2e8f0;
+            }
+
+            .card-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Links */
+        a {
+            color: #003366;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #336699;
+            text-decoration: underline;
+        }
+
+        /* Lists */
+        ul {
+            margin-left: 20px;
+            color: #475569;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.1) 0%, rgba(51, 102, 153, 0.05) 100%);
+            border: 1px solid rgba(0, 51, 102, 0.2);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .highlight-box h3 {
+            color: #003366;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="profile-header">
+                <div class="profile-image">IJ</div>
+                <div class="profile-details">
+                    <h1>Dr. Imen Jdey</h1>
+                    <div class="title">Associate Professor in Computer Science</div>
+                    <div class="title">AI Researcher & Deep Learning Expert</div>
+                    <div class="institution">Faculty of Economics and Management of Sfax, University of Sfax</div>
+                </div>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <span class="contact-icon">📍</span>
+                    <div>
+                        <strong>Office</strong><br>
+                        FSEGS, University of Sfax, Tunisia
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📧</span>
+                    <div>
+                        <strong>Email</strong><br>
+                        <a href="mailto:Imen.jdey@ieee.org" style="color: rgba(255,255,255,0.9);">Imen.jdey@ieee.org</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📞</span>
+                    <div>
+                        <strong>Phone</strong><br>
+                        +216 54 666 842
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">🎓</span>
+                    <div>
+                        <strong>ORCID</strong><br>
+                        <a href="https://orcid.org/0000-0001-7937-941X" target="_blank" style="color: rgba(255,255,255,0.9);">0000-0001-7937-941X</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">🔗</span>
+                    <div>
+                        <strong>LinkedIn</strong><br>
+                        <a href="https://www.linkedin.com/in/imen-jdey" target="_blank" style="color: rgba(255,255,255,0.9);">My Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="navigation">
+        <div class="nav-container">
+            <div class="nav-menu">
+                <button class="nav-btn active" onclick="showSection('about')">About</button>
+                <button class="nav-btn" onclick="showSection('research')">Research</button>
+                <button class="nav-btn" onclick="showSection('experience')">Experience</button>
+                <button class="nav-btn" onclick="showSection('education')">Education</button>
+                <button class="nav-btn" onclick="showSection('publications')">Publications</button>
+                <button class="nav-btn" onclick="showSection('teaching')">Teaching</button>
+                <button class="nav-btn" onclick="showSection('contact')">Contact</button>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div id="about" class="content-section active">
+            <h2 class="section-title">About Me</h2>
+
+            <div class="intro-text">
+                <p>Welcome to my academic profile! I am an Associate Professor in Computer Science with over a decade of experience in artificial intelligence research. My work focuses on developing innovative AI solutions for healthcare, remote sensing, and privacy-preserving systems.</p>
+
+                <p>I have published extensively in top-tier international journals and conferences, supervised numerous PhD and Master's students, and led several international research projects. My research combines theoretical foundations with practical applications, particularly in medical imaging and deep learning.</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">11+</div>
+                    <div class="stat-label">Journal Articles</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">18+</div>
+                    <div class="stat-label">Conference Papers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Students Supervised</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">International Projects</div>
+                </div>
+            </div>
+
+            <div class="research-grid">
+                <div class="research-area">
+                    <div class="research-icon">🧠</div>
+                    <h3>Artificial Intelligence</h3>
+                    <p>Deep Learning, Machine Learning, and Neural Networks for medical imaging and computer vision applications with focus on explainable AI.</p>
+                </div>
+                <div class="research-area">
+                    <div class="research-icon">🏥</div>
+                    <h3>Medical Imaging</h3>
+                    <p>AI-driven solutions for malaria detection, dental radiography, and healthcare IoT systems with privacy-preserving techniques.</p>
+                </div>
+                <div class="research-area">
+                    <div class="research-icon">🔒</div>
+                    <h3>Privacy & Security</h3>
+                    <p>Federated Learning, Blockchain technology, and privacy-preserving AI mechanisms for sensitive data processing.</p>
+                </div>
+                <div class="research-area">
+                    <div class="research-icon">🛰️</div>
+                    <h3>Remote Sensing</h3>
+                    <p>Satellite imagery classification and hyperspectral image analysis using advanced AI techniques and vision transformers.</p>
+                </div>
+            </div>
+        </div>
+        <div id="research" class="content-section">
+            <h2 class="section-title">Research Projects</h2>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Robust And Explainable AI for Medical Images</div>
+                        <div class="card-subtitle">Tunisian-Turkish Project MHESR – TÜBİTAK</div>
+                    </div>
+                    <div class="card-date">2024-2027</div>
+                </div>
+                <div class="card-content">
+                    <p>Leading research on developing robust and interpretable AI systems for medical image analysis, focusing on explainable artificial intelligence techniques. This collaborative project aims to advance the understanding and trustworthiness of AI in healthcare applications.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Digital Strategies for Doctoral Training</div>
+                        <div class="card-subtitle">Erasmus+ Project "RAQMYAT"</div>
+                    </div>
+                    <div class="card-date">2023-2024</div>
+                </div>
+                <div class="card-content">
+                    <p>Enhancing doctoral students' research capabilities through digital skills development and promoting digital humanities in higher education. The project focuses on improving non-academic skills and employability of doctoral students in Social and Human Sciences.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Erasmus+ Scientific Mobility</div>
+                        <div class="card-subtitle">University of León, Spain</div>
+                    </div>
+                    <div class="card-date">2022-2023</div>
+                </div>
+                <div class="card-content">
+                    <p>Collaborative research on advanced machine learning techniques and international academic cooperation. This mobility project strengthened research partnerships and facilitated knowledge exchange in AI and computer vision.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Advanced Methods For Data Assimilation</div>
+                        <div class="card-subtitle">INRIA-Rocquencourt (CLIME) ENVIAIR Project</div>
+                    </div>
+                    <div class="card-date">2014-2016</div>
+                </div>
+                <div class="card-content">
+                    <p>Applied decision trees for classification of spatio-temporal data extracted from satellite images for environmental monitoring. This foundational work established expertise in remote sensing and environmental data analysis.</p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3>🤝 Current Collaborations</h3>
+                <p>Active collaborations with international institutions including INSA Lyon (France), University of León (Spain), and various research labs across Europe and North Africa. Open to new research partnerships and joint projects.</p>
+            </div>
+        </div>
+        <div id="experience" class="content-section">
+            <h2 class="section-title">Professional Experience</h2>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Associate Professor in Computer Science</div>
+                        <div class="card-subtitle">Faculty of Economics and Management of Sfax (FSEGS), University of Sfax</div>
+                    </div>
+                    <div class="card-date">Since 2025</div>
+                </div>
+                <div class="card-content">
+                    <p>Leading research initiatives and teaching advanced computer science courses while directing the Virtual Learning Department. Responsible for developing AI curricula and supervising PhD students in machine learning and computer vision.</p>
+                    <ul>
+                        <li>Director of Virtual Learning Department</li>
+                        <li>Member of Master's Committee for Research in Data Science</li>
+                        <li>Director of Career and Competency Certification Center (4C)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Visiting Lecturer in Computer Science</div>
+                        <div class="card-subtitle">National Institute of Applied Sciences Lyon (INSA Lyon), France</div>
+                    </div>
+                    <div class="card-date">2024-2025</div>
+                </div>
+                <div class="card-content">
+                    <p>Teaching Artificial Intelligence to 4th year telecommunications engineering students, delivering lectures and practical sessions on machine learning, neural networks, and AI applications.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Assistant Professor with Habilitation</div>
+                        <div class="card-subtitle">Higher Institute of Applied Sciences and Technology of Kairouan</div>
+                    </div>
+                    <div class="card-date">2021-2025</div>
+                </div>
+                <div class="card-content">
+                    <p>Directed the Career and Competency Certification Center (4C) and served on Master's committees for Data Science programs. Led department initiatives and supervised multiple research projects.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Visiting Lecturer</div>
+                        <div class="card-subtitle">Institut Supérieur ISAT, University of Burgundy, France</div>
+                    </div>
+                    <div class="card-date">2019-2021</div>
+                </div>
+                <div class="card-content">
+                    <p>Taught Artificial Vision and Fuzzy Logic in the International Master's program for Automotive Engineering and Sustainable Mobility. Developed course materials for autonomous vehicle applications.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Assistant Professor</div>
+                        <div class="card-subtitle">Faculty of Sciences and Techniques of Sidi Bouzid, University of Kairouan</div>
+                    </div>
+                    <div class="card-date">2014-2019</div>
+                </div>
+                <div class="card-content">
+                    <p>Established and led the Department of Mathematics and Computer Science, while building the research foundation in AI and machine learning. Initiated multiple student research programs.</p>
+                </div>
+            </div>
+        </div>
+        <div id="education" class="content-section">
+            <h2 class="section-title">Education & Qualifications</h2>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Habilitation in Computer Science (HDR)</div>
+                        <div class="card-subtitle">National Engineering School of Sfax (ENIS), University of Sfax, Tunisia</div>
+                    </div>
+                    <div class="card-date">2021</div>
+                </div>
+                <div class="card-content">
+                    <p>Recognized for advanced research and supervisory qualifications in the field of Computer Science, focusing on advanced AI and machine learning models.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">PhD in Computer Science</div>
+                        <div class="card-subtitle">National School of Engineers of Sfax (ENIS), University of Sfax, Tunisia</div>
+                    </div>
+                    <div class="card-date">2014</div>
+                </div>
+                <div class="card-content">
+                    <p>Thesis on "New Methodologies for Data Assimilation Applied to Urban Air Quality Management". Research focused on applying machine learning to environmental data for predictive modeling.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Master of Science in Information Systems and New Technologies (ISNT)</div>
+                        <div class="card-subtitle">National School of Engineers of Sfax (ENIS), University of Sfax, Tunisia</div>
+                    </div>
+                    <div class="card-date">2010</div>
+                </div>
+                <div class="card-content">
+                    <p>Specialization in advanced information technologies and systems design, laying the groundwork for a career in AI research.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Bachelor of Science in Computer Science and Multimedia</div>
+                        <div class="card-subtitle">Faculty of Science of Sfax (FSS), University of Sfax, Tunisia</div>
+                    </div>
+                    <div class="card-date">2008</div>
+                </div>
+                <div class="card-content">
+                    <p>Foundation in computer science fundamentals, programming, and multimedia applications.</p>
+                </div>
+            </div>
+        </div>
+        <div id="publications" class="content-section">
+            <h2 class="section-title">Selected Publications</h2>
+            <div class="publications-list">
+                <div class="publication-item">
+                    <div class="pub-title">Federated Learning-based Privacy-Preserving Malignant Breast Tumor Detection</div>
+                    <div class="pub-authors">I. Jdey, A. Belazi, H. J. Al-Rubaie, F. O. S. K. Al-Sultani, S. Al-Sultani</div>
+                    <div class="pub-journal">IEEE Transactions on Emerging Topics in Computing, 2024</div>
+                </div>
+                <div class="publication-item">
+                    <div class="pub-title">A New Secure and Reliable AI-Based Healthcare IoT System Using Blockchain Technology</div>
+                    <div class="pub-authors">M. Jaber, I. Jdey, R. D. B. Al-Rubaie</div>
+                    <div class="pub-journal">CMC-Computers, Materials & Continua, 2023</div>
+                </div>
+                <div class="publication-item">
+                    <div class="pub-title">An efficient CNN-based approach for malaria parasites detection from blood smear images</div>
+                    <div class="pub-authors">I. Jdey, Y. Jaber, A. Belazi</div>
+                    <div class="pub-journal">International Journal of Information Technology and Electrical Engineering, 2023</div>
+                </div>
+                <div class="publication-item">
+                    <div class="pub-title">A Secure Blockchain-Based Deep Learning Framework for Privacy-Preserving Healthcare Systems</div>
+                    <div class="pub-authors">I. Jdey, M. Zribi, A. Belazi, R. D. B. Al-Rubaie</div>
+                    <div class="pub-journal">IEEE Transactions on Industrial Informatics, 2023</div>
+                </div>
+                <div class="publication-item">
+                    <div class="pub-title">Machine Learning based Classification of Dental Radiographs for Enhanced Diagnostics</div>
+                    <div class="pub-authors">H. J. Al-Rubaie, M. H. Al-Rubaie, I. Jdey</div>
+                    <div class="pub-journal">Sensors, 2023</div>
+                </div>
+                <div class="publication-item">
+                    <div class="pub-title">Explainable AI in Medical Image Analysis: A Survey</div>
+                    <div class="pub-authors">I. Jdey, J. S. Khan, A. A. Khan</div>
+                    <div class="pub-journal">Journal of Medical Imaging and Health Informatics, 2023</div>
+                </div>
+                <div class="publication-item">
+                    <div class="pub-title">Hyperspectral Image Classification with Vision Transformers and Spectral Attention</div>
+                    <div class="pub-authors">I. Jdey, H. J. Al-Rubaie, J. S. Khan</div>
+                    <div class="pub-journal">IEEE Geoscience and Remote Sensing Letters, 2023</div>
+                </div>
+                <div class="publication-item">
+                    <div class="pub-title">A Novel Approach for Image Classification Using Deep Learning and Vision Transformers</div>
+                    <div class="pub-authors">I. Jdey, A. Belazi, M. S. Jaber</div>
+                    <div class="pub-journal">Journal of Imaging, 2022</div>
+                </div>
+                <div class="publication-item">
+                    <div class="pub-title">Air quality modeling and forecasting based on a data-driven approach and decision tree</div>
+                    <div class="pub-authors">I. Jdey, S. Z. Mohamed</div>
+                    <div class="pub-journal">International Journal of Environmental Monitoring and Analysis, 2017</div>
+                </div>
+            </div>
+        </div>
+        <div id="teaching" class="content-section">
+            <h2 class="section-title">Teaching</h2>
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Computer Science and AI Courses</div>
+                        <div class="card-subtitle">FSEGS, ISAT, INSA Lyon</div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>I have designed and taught a variety of courses at both the undergraduate and graduate levels, with a focus on preparing students for careers in research and industry. Courses taught include:</p>
+                    <ul>
+                        <li><strong>Artificial Intelligence & Machine Learning:</strong> Core concepts, algorithms, and applications.</li>
+                        <li><strong>Deep Learning:</strong> Advanced topics in neural networks, CNNs, and transformers.</li>
+                        <li><strong>Artificial Vision:</strong> Image processing, object detection, and computer vision projects.</li>
+                        <li><strong>Fuzzy Logic:</strong> Theory and applications in control systems and decision making.</li>
+                        <li><strong>Database Management:</strong> Relational databases and SQL.</li>
+                        <li><strong>Web Development:</strong> Modern front-end and back-end technologies.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming & Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">R</span>
+                        <span class="skill-tag">MATLAB</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Git</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Teaching Interests</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Artificial Intelligence</span>
+                        <span class="skill-tag">Deep Learning</span>
+                        <span class="skill-tag">Computer Vision</span>
+                        <span class="skill-tag">Data Science</span>
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">Web Technologies</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="contact" class="content-section">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="intro-text">
+                <p>I am always open to new research collaborations, supervision opportunities for motivated students, and speaking engagements. Please feel free to contact me via email or connect with me on LinkedIn.</p>
+                <div style="margin-top: 20px;">
+                    <a href="mailto:Imen.jdey@ieee.org" class="nav-btn" style="color: #fff; background: #003366; border-bottom: none; border-radius: 5px; padding: 15px 30px; display: inline-block;">Email Me</a>
+                    <a href="https://www.linkedin.com/in/imen-jdey" target="_blank" class="nav-btn" style="color: #fff; background: #336699; border-bottom: none; border-radius: 5px; padding: 15px 30px; display: inline-block;">Connect on LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>Dr. Imen Jdey &copy; 2025. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+
+            const navBtns = document.querySelectorAll('.nav-btn');
+            navBtns.forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
