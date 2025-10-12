@@ -117,6 +117,29 @@
             border-radius: 8px;
             border-left: 4px solid var(--primary-blue);
         }
+        
+        .organizers-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .organizers-list li {
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+
+        .organizers-list .name {
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-right: 0.5rem;
+        }
+
+        .organizers-list .affiliation {
+            color: var(--text-secondary);
+            font-style: italic;
+            font-size: 0.9rem;
+        }
 
         .meta-section h4 {
             color: var(--primary-blue);
@@ -131,6 +154,7 @@
             color: var(--text-secondary);
             font-size: 0.9rem;
             line-height: 1.5;
+            margin-bottom: 0.75rem;
         }
 
         .divider {
@@ -217,6 +241,14 @@
             opacity: 0.3;
             font-family: serif;
         }
+        
+        .abstract-text ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
 
         .topics-grid {
             display: grid;
@@ -275,34 +307,6 @@
             color: var(--primary-blue);
             margin-bottom: 0.5rem;
             display: block;
-        }
-
-        .paper-reference {
-            background: var(--background);
-            border-left: 3px solid var(--accent-blue);
-            padding: 1rem 1.5rem;
-            margin: 1rem 0;
-            border-radius: 0 6px 6px 0;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .paper-title {
-            font-weight: 600;
-            color: var(--dark-blue);
-            margin-bottom: 0.25rem;
-            font-size: 0.95rem;
-        }
-
-        .paper-authors {
-            color: var(--text-muted);
-            font-size: 0.875rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .paper-description {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            line-height: 1.5;
         }
 
         .activities-section {
@@ -431,14 +435,14 @@
             <div class="meta-info">
                 <div class="meta-section">
                     <h4>Organizers</h4>
-                    <ul>
+                    <ul class="organizers-list">
                         <li>
                             <span class="name">Imen Jdey</span>
                             <span class="affiliation">(REGIM Lab, Sfax University)</span>
                         </li>
                         <li>
                             <span class="name">M. Tanveer</span>
-                            <span class="affiliation">(IIT Indore, India)</span>
+                            <span class="affiliation">(Indian Institute of Technology Indore, India)</span>
                         </li>
                         <li>
                             <span class="name">Fadoua Drira</span>
@@ -452,25 +456,30 @@
                 </div>
                 
                 <div class="meta-section">
-                    <h4>Primary Contact</h4>
-                    <p>imen.jdey@ieee.org</p>
-                    <h4>Session Webpage</h4>
-                    <p><a href="https://yourdomain1.github.io/wlccispecialsession/" style="color: var(--primary-blue); text-decoration: none;">https://yourdomain1.github.io/wlccispecialsession/</a></p>
+                    <h4>Primary Contact & Details</h4>
+                    <p>
+                        **Imen Jdey**<br>
+                        Email: <a href="mailto:imen.jdey@ieee.org" style="color: var(--primary-blue); text-decoration: none;">imen.jdey@ieee.org</a>
+                    </p>
+                    <p>
+                        **Session Webpage**<br>
+                        <a href="https://yourdomain1.github.io/wlccispecialsession/" style="color: var(--primary-blue); text-decoration: none;">https://yourdomain1.github.io/wlccispecialsession/</a>
+                    </p>
                 </div>
             </div>
 
             <section>
                 <h2 class="section-title">Abstract</h2>
                 <div class="abstract-text">
-                    [cite_start]The widespread adoption of computational intelligence across various high-stakes domains, from computer vision to signal processing and beyond, is heavily reliant on our ability to understand and trust the decisions made by these complex models[cite: 23]. [cite_start]To ensure responsible deployment, this trust must be built upon rigorous methodological frameworks and clear, standardized evaluation protocols[cite: 24].
-                    [cite_start]This special session will serve as a focused, interdisciplinary forum to explore **novel methodological frameworks, concrete techniques, and rigorous benchmarking** in eXplainable and interpretable AI (XAI)[cite: 25]. [cite_start]Our specific emphasis will be on methodological innovation for diverse data modalities: **images, audio (signal), array data, and multimodal data**, coupled with clear evaluation protocols[cite: 26].
+                    The widespread adoption of computational intelligence across various high-stakes domains, from computer vision to signal processing and beyond, is heavily reliant on our ability to understand and trust the decisions made by these complex models. To ensure responsible deployment, this trust must be built upon **rigorous methodological frameworks and clear, standardized evaluation protocols.**
+                    This special session will serve as a focused, interdisciplinary forum to explore **novel methodological frameworks, concrete techniques, and rigorous benchmarking** in eXplainable and interpretable AI (XAI). Our specific emphasis will be on methodological innovation for diverse data modalities: **images, audio (signal), array data, and multimodal data**, coupled with clear evaluation protocols.
                     We will welcome contributions that tackle fundamental challenges by focusing on:
                     <ul>
-                        [cite_start]<li>Developing and detailing **novel XAI methodologies** tailored to different data types[cite: 28].</li>
-                        [cite_start]<li>**Comparative studies and rigorous benchmarking** of existing and new XAI techniques[cite: 29].</li>
-                        [cite_start]<li>Establishing **standardized metrics and protocols** for evaluating explanations across diverse real-world applications[cite: 30].</li>
+                        <li>Developing and detailing **novel XAI methodologies** tailored to different data types.</li>
+                        <li>**Comparative studies and rigorous benchmarking** of existing and new XAI techniques.</li>
+                        <li>Establishing **standardized metrics and protocols** for evaluating explanations across diverse real-world applications.</li>
                     </ul>
-                    The session is directly relevant to IJCNN, FUZZ-IEEE, and IEEE CEC as it addresses core computational intelligence challenges—robustness, explainability, and trustworthiness—within the context of various data types. The ultimate goal is to foster a dialogue that moves beyond pure performance metrics to a holistic framework for responsible and transparent AI deployment.
+                    The ultimate goal is to foster a dialogue that moves beyond pure performance metrics to a holistic framework for **responsible and transparent AI deployment.**
                 </div>
             </section>
 
@@ -479,17 +488,17 @@
             <section>
                 <h2 class="section-title">Topics of Interest</h2>
                 <div class="topics-grid">
-                    [cite_start]<div class="topic-item">Novel XAI Methodologies and Implementations for Image and Audio Analysis [cite: 33]</div>
-                    [cite_start]<div class="topic-item">Comparative Benchmarking of Interpretable Deep Learning Models for Array and Tabular Data [cite: 34]</div>
-                    [cite_start]<div class="topic-item">Algorithmic Methods for Fusing and Evaluating Explanations in Multimodal Systems [cite: 35]</div>
-                    [cite_start]<div class="topic-item">Rigorous Evaluation and Standardized Metrics for XAI Visualization Techniques [cite: 36]</div>
-                    [cite_start]<div class="topic-item">Formal Protocols and Metrics for Evaluating Human-in-the-Loop XAI Effectiveness [cite: 37]</div>
-                    [cite_start]<div class="topic-item">Benchmarking and Comparative Studies of Algorithmic Auditing Techniques [cite: 38]</div>
-                    [cite_start]<div class="topic-item">Methodologies and Benchmarks for Quantifying and Mitigating Bias in Explanations [cite: 39]</div>
-                    [cite_start]<div class="topic-item">Concrete Methods and Comparative Studies of Causal and Counterfactual XAI for Different Data Modalities [cite: 40]</div>
-                    [cite_start]<div class="topic-item">Methodological Integration of XAI with Fuzzy Systems and Evolutionary Computation [cite: 41]</div>
-                    [cite_start]<div class="topic-item">Benchmark Datasets and Metrics for Evaluating Explanations [cite: 42]</div>
-                    [cite_start]<div class="topic-item">XAI Methodologies in Signal Processing and Time-Series Analysis [cite: 43]</div>
+                    <div class="topic-item">Novel XAI Methodologies and Implementations for Image and Audio Analysis</div>
+                    <div class="topic-item">Comparative Benchmarking of Interpretable Deep Learning Models for Array and Tabular Data</div>
+                    <div class="topic-item">Algorithmic Methods for Fusing and Evaluating Explanations in Multimodal Systems</div>
+                    <div class="topic-item">Rigorous Evaluation and Standardized Metrics for XAI Visualization Techniques</div>
+                    <div class="topic-item">Formal Protocols and Metrics for Evaluating Human-in-the-Loop XAI Effectiveness</div>
+                    <div class="topic-item">Benchmarking and Comparative Studies of Algorithmic Auditing Techniques</div>
+                    <div class="topic-item">Methodologies and Benchmarks for Quantifying and Mitigating Bias in Explanations</div>
+                    <div class="topic-item">Concrete Methods and Comparative Studies of Causal and Counterfactual XAI for Different Data Modalities</div>
+                    <div class="topic-item">Methodological Integration of XAI with Fuzzy Systems and Evolutionary Computation</div>
+                    <div class="topic-item">Benchmark Datasets and Metrics for Evaluating Explanations</div>
+                    <div class="topic-item">XAI Methodologies in Signal Processing and Time-Series Analysis</div>
                 </div>
             </section>
 
@@ -497,18 +506,19 @@
 
             <section>
                 <h2 class="section-title">Relevance to WCCI</h2>
+                <p>This special session aligns directly with the themes of the WCCI's three flagship conferences:</p>
                 <div class="relevance-grid">
                     <div class="relevance-card">
                         <span class="conference-name">IJCNN (International Joint Conference on Neural Networks)</span>
-                        [cite_start]<p>The session will showcase the latest advancements in XAI for deep neural networks, including CNNs, ViTs, and other architectures, which are central to modern computer vision and signal processing[cite: 46].</p>
+                        <p>The session will showcase the latest advancements in XAI for deep neural networks, including CNNs, ViTs, and other architectures, which are central to modern computer vision and signal processing.</p>
                     </div>
                     <div class="relevance-card">
                         <span class="conference-name">FUZZ-IEEE (IEEE International Conference on Fuzzy Systems)</span>
-                        [cite_start]<p>We will explore how fuzzy logic and fuzzy systems can be used to develop intrinsically interpretable models and to provide human-understandable explanations for black-box models[cite: 47].</p>
+                        <p>We will explore how fuzzy logic and fuzzy systems can be used to develop intrinsically interpretable models and to provide human-understandable explanations for black-box models.</p>
                     </div>
                     <div class="relevance-card">
                         <span class="conference-name">IEEE CEC (IEEE Congress on Evolutionary Computation)</span>
-                        [cite_start]<p>The session will address the application of evolutionary algorithms to optimize and generate more interpretable models, as well as the use of XAI to understand the decision-making process of complex evolutionary systems[cite: 48].</p>
+                        <p>The session will address the application of evolutionary algorithms to optimize and generate more interpretable models, as well as the use of XAI to understand the decision-making process of complex evolutionary systems.</p>
                     </div>
                 </div>
             </section>
@@ -519,20 +529,20 @@
                 <h2 class="section-title">Organizer Biographies</h2>
                 <div class="bio-card">
                     <div class="bio-name">Imen Jdey</div>
-                    [cite_start]<div class="bio-text">Imen Jdey is a researcher at REGIM Lab, Sfax University[cite: 9]. [cite_start]Her research interests are centered on machine learning and signal processing, with a particular focus on the development of eXplainable AI (XAI) methods[cite: 10]. [cite_start]She is dedicated to creating transparent and trustworthy models for a variety of data types, including audio and multimodal data, to ensure that AI systems are not only accurate but also understandable and reliable[cite: 11].</div>
+                    <div class="bio-text">Imen Jdey is a researcher at REGIM Lab, Sfax University. Her research interests are centered on machine learning and signal processing, with a particular focus on the development of eXplainable AI (XAI) methods. She is dedicated to creating transparent and trustworthy models for a variety of data types, including audio and multimodal data, to ensure that AI systems are not only accurate but also understandable and reliable.</div>
                 </div>
                <div class="bio-card">
                     <div class="bio-name">M. Tanveer</div>
-                    <div class="bio-text">M. [cite_start]Tanveer is a Professor and Ramanujan Fellow at the Department of Mathematics of the Indian Institute of Technology Indore[cite: 12]. [cite_start]His research spans a wide range of topics, including support vector machines, optimization, machine learning, and deep learning, with applications to biomedical signal processing and Alzheimer's disease[cite: 13]. [cite_start]His work focuses on creating robust and trustworthy AI models, which is directly relevant to the session's emphasis on eXplainable AI (XAI)[cite: 14].</div>
+                    <div class="bio-text">M. Tanveer is a Professor and Ramanujan Fellow at the Department of Mathematics of the Indian Institute of Technology Indore. His research spans a wide range of topics, including support vector machines, optimization, machine learning, and deep learning, with applications to biomedical signal processing and Alzheimer's disease. His work focuses on creating robust and trustworthy AI models, which is directly relevant to the session's emphasis on eXplainable AI (XAI).</div>
                 </div>
                 <div class="bio-card">
                     <div class="bio-name">Fadoua Drira</div>
-                    [cite_start]<div class="bio-text">Fadoua Drira is an Associate Professor in the Department of Computer Science at ENIS University of Sfax and the head of the Research Groups on Intelligent Machines Laboratory (ReGIM-Lab)[cite: 15]. [cite_start]Her research interests include computational intelligence, image processing, and computer vision[cite: 16]. [cite_start]Her work, including a recent paper on explainable skin cancer diagnosis using Vision Transformers, demonstrates her commitment to applying explainable AI techniques to real-world medical and vision-based challenges[cite: 17].</div>
+                    <div class="bio-text">Fadoua Drira is an Associate Professor in the Department of Computer Science at ENIS University of Sfax and the head of the Research Groups on Intelligent Machines Laboratory (ReGIM-Lab). Her research interests include computational intelligence, image processing, and computer vision. Her work, including a recent paper on explainable skin cancer diagnosis using Vision Transformers, demonstrates her commitment to applying explainable AI techniques to real-world medical and vision-based challenges.</div>
                 </div>
 
                 <div class="bio-card">
                     <div class="bio-name">Rahma Fourati</div>
-                    [cite_start]<div class="bio-text">Rahma Fourati is a researcher at REGIM Lab, Jendouba University[cite: 18]. [cite_start]Her research interests are in neural networks, generative models, and EEG signal analysis, with a focus on applications such as epileptic seizure prediction[cite: 19]. [cite_start]She has worked on topics related to model compression and efficient neural networks, which are crucial for the practical deployment of AI systems[cite: 20]. [cite_start]Her interest in EEG signals and other biomedical data aligns perfectly with the session's focus on XAI for diverse data modalities[cite: 21].</div>
+                    <div class="bio-text">Rahma Fourati is a researcher at REGIM Lab, Jendouba University. Her research interests are in neural networks, generative models, and EEG signal analysis, with a focus on applications such as epileptic seizure prediction. She has worked on topics related to model compression and efficient neural networks, which are crucial for the practical deployment of AI systems. Her interest in EEG signals and other biomedical data aligns perfectly with the session's focus on XAI for diverse data modalities.</div>
                 </div>
             </section>
 
@@ -540,7 +550,7 @@
 
             <section>
                 <h2 class="section-title">Expected Benefit</h2>
-                [cite_start]<p>The proposed special session will benefit the WCCI community by creating a dedicated venue for this rapidly growing and critical field[cite: 50]. [cite_start]It will attract high-quality submissions from researchers across different disciplines and will foster new collaborations, bridging the gap between theoretical XAI research and its practical application to diverse data modalities[cite: 51]. [cite_start]We aim to contribute to the WCCI's mission of promoting computational intelligence research that is not only powerful but also transparent, trustworthy, and responsible[cite: 52].</p>
+                <p>The proposed special session will benefit the WCCI community by creating a dedicated venue for this rapidly growing and critical field. It will attract high-quality submissions from researchers across different disciplines and will foster new collaborations, bridging the gap between theoretical XAI research and its practical application to diverse data modalities. We aim to contribute to the WCCI's mission of promoting computational intelligence research that is not only powerful but also transparent, trustworthy, and responsible.</p>
             </section>
             
             <div class="divider"></div>
@@ -548,30 +558,30 @@
             <section>
                 <h2 class="section-title">Additional Activities</h2>
                 <div class="activities-section">
-                    [cite_start]<div class="activity-highlight">Open Discussion Slot (ODS) [cite: 54, 56]</div>
-                    [cite_start]<p>To enhance participant engagement and foster deeper dialogue, this special session will incorporate an interactive discussion format designed to go beyond traditional paper presentations and create a collaborative environment for attendees[cite: 54, 55].</p>
+                    <div class="activity-highlight">Open Discussion Slot (ODS)</div>
+                    <p>To enhance participant engagement and foster deeper dialogue, this special session will incorporate an interactive discussion format designed to go beyond traditional paper presentations and create a collaborative environment for attendees.</p>
                     
                     <div class="activity-details">
                         <div class="activity-detail">
                             <div class="detail-label">Format</div>
-                            [cite_start]<p>Facilitated, interactive discussion following paper presentations [cite: 57, 58]</p>
+                            <p>Facilitated, interactive discussion following paper presentations</p>
                         </div>
                         <div class="activity-detail">
                             <div class="detail-label">Duration</div>
-                            [cite_start]<p>30-minute dedicated slot at session end [cite: 58, 60]</p>
+                            <p>30-minute dedicated slot at session end</p>
                         </div>
                         <div class="activity-detail">
                             <div class="detail-label">Facilitators</div>
-                            [cite_start]<p>Session organizers M. Tanveer and Imen Jdey will co-facilitate the discussion[cite: 59, 64].</p>
+                            <p>Session organizers M. Tanveer and Imen Jdey will co-facilitate the discussion.</p>
                         </div>
                         <div class="activity-detail">
                             <div class="detail-label">Purpose</div>
-                            [cite_start]<p>Bridge theory and practice, encourage collaborations, and identify future research directions in XAI[cite: 63].</p>
+                            <p>Bridge theory and practice, encourage collaborations, and identify future research directions in XAI.</p>
                         </div>
                     </div>
 
                     <h4 class="subsection-title">Expected Benefits</h4>
-                    [cite_start]<p>The ODS will serve as a dynamic forum for attendees to share insights, raise critical questions, and brainstorm solutions collectively[cite: 61]. [cite_start]It will allow for a free-flowing exchange of ideas that may not fit into the Q&A segment of individual paper presentations[cite: 62]. [cite_start]This format is intended to bridge the gap between theoretical research and practical challenges, encouraging new collaborations and helping to identify future research directions in XAI for diverse data modalities[cite: 63].</p>
+                    <p>The ODS will serve as a dynamic forum for attendees to share insights, raise critical questions, and brainstorm solutions collectively. It will allow for a free-flowing exchange of ideas that may not fit into the Q&A segment of individual paper presentations. This format is intended to bridge the gap between theoretical research and practical challenges, encouraging new collaborations and helping to identify future research directions in XAI for diverse data modalities.</p>
                 </div>
             </section>
 
@@ -579,7 +589,7 @@
 
             <div class="call-to-action">
                 <h2>Call for Papers</h2>
-                [cite_start]<p>We welcome submissions on the topics listed above[cite: 66]. [cite_start]All papers will be subject to the same rigorous peer-review process as regular WCCI 2026 submissions[cite: 66]. Authors are encouraged to submit early. [cite_start]For submission details and deadlines, please refer to the official WCCI 2026 conference website[cite: 67].</p>
+                <p>We welcome submissions on the topics listed above. All papers will be subject to the same rigorous peer-review process as regular WCCI 2026 submissions. Authors are encouraged to submit early. For submission details and deadlines, please refer to the official WCCI 2026 conference website.</p>
             </div>
         </div>
     </div>
