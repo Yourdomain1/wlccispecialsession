@@ -1,401 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Special Session Proposal - WCCI 2026</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-blue: #0066cc;
-            --dark-blue: #003d7a;
-            --accent-blue: #4da6ff;
-            --text-primary: #1a1a1a;
-            --text-secondary: #4a4a4a;
-            --background: #ffffff;
-            --background-alt: #f8fafc;
-            --border-light: #e2e8f0;
-            --border-medium: #cbd5e1;
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Special Session Proposal - WCCI 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+Pro:wght@600&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --blue: #005eb8;
+        --light-blue: #e8f2ff;
+        --text: #222;
+        --subtext: #555;
+    }
 
-        * {
+    body {
+        font-family: 'Inter', sans-serif;
+        background: #fff;
+        color: var(--text);
+        margin: 0;
+        padding: 0;
+    }
+
+    .page {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px 30px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    header {
+        text-align: center;
+        border-bottom: 2px solid var(--blue);
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+    }
+
+    .badge {
+        background: var(--blue);
+        color: white;
+        padding: 4px 10px;
+        border-radius: 12px;
+        font-size: 12px;
+        display: inline-block;
+        margin-bottom: 8px;
+    }
+
+    h1 {
+        font-family: 'Source Serif Pro', serif;
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--blue);
+        margin: 0;
+    }
+
+    section {
+        margin-bottom: 18px;
+    }
+
+    h2 {
+        font-family: 'Source Serif Pro', serif;
+        font-size: 15px;
+        color: var(--blue);
+        margin: 10px 0 6px;
+        border-bottom: 1px solid var(--light-blue);
+        display: inline-block;
+    }
+
+    ul {
+        margin: 5px 0 5px 18px;
+        padding: 0;
+    }
+
+    li {
+        margin-bottom: 3px;
+    }
+
+    .organizers {
+        background: var(--light-blue);
+        padding: 10px;
+        border-radius: 6px;
+        font-size: 13px;
+    }
+
+    .organizers strong {
+        color: var(--blue);
+    }
+
+    .topics {
+        columns: 2;
+        column-gap: 20px;
+    }
+
+    .topics li {
+        margin-bottom: 3px;
+    }
+
+    .cta {
+        background: var(--blue);
+        color: white;
+        text-align: center;
+        padding: 10px;
+        border-radius: 6px;
+        font-size: 13px;
+    }
+
+    a {
+        color: #fff;
+        text-decoration: underline;
+    }
+
+    @media print {
+        .page {
+            border: none;
             margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            padding: 10mm 12mm;
+            font-size: 12pt;
         }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-            font-size: 15px; /* Slightly reduced base font size */
-            line-height: 1.6; /* Slightly reduced line height */
-            color: var(--text-primary);
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            min-height: 100vh;
-        }
-
-        .document-container {
-            max-width: 210mm;
-            margin: 1.5rem auto; /* Reduced margin */
-            background: var(--background);
-            border-radius: 10px; /* Slightly reduced border-radius */
-            box-shadow: var(--shadow-lg);
-            overflow: hidden;
-            border: 1px solid var(--border-light);
-        }
-
-        .header {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
-            color: white;
-            padding: 2.5rem 2.5rem 1.5rem; /* Reduced padding */
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-            opacity: 0.1;
-        }
-
-        .header-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .conference-badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.15);
-            padding: 0.4rem 0.8rem; /* Reduced padding */
-            border-radius: 18px; /* Slightly reduced border-radius */
-            font-size: 0.8rem; /* Slightly reduced font size */
-            font-weight: 500;
-            margin-bottom: 0.8rem; /* Reduced margin */
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .main-title {
-            font-family: 'Source Serif Pro', serif;
-            font-size: 2.2rem; /* Reduced font size */
-            font-weight: 600;
-            line-height: 1.2;
-            margin-bottom: 0.6rem; /* Reduced margin */
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .subtitle {
-            font-size: 1.1rem; /* Reduced font size */
-            font-weight: 400;
-            opacity: 0.9;
-            margin-bottom: 1.2rem; /* Reduced margin */
-            line-height: 1.4;
-        }
-
-        .content {
-            padding: 2.5rem; /* Reduced padding */
-        }
-
-        .meta-info {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem; /* Reduced gap */
-            margin-bottom: 2.5rem; /* Reduced margin */
-            padding: 1.5rem; /* Reduced padding */
-            background: var(--background-alt);
-            border-radius: 8px;
-            border-left: 4px solid var(--primary-blue);
-        }
-        
-        .organizers-list {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        .organizers-list li {
-            margin-bottom: 0.4rem; /* Reduced margin */
-            color: var(--text-primary);
-            font-size: 0.9rem; /* Reduced font size */
-        }
-
-        .organizers-list .name {
-            font-weight: 600;
-            color: var(--primary-blue);
-            margin-right: 0.4rem; /* Reduced margin */
-        }
-
-        .organizers-list .affiliation {
-            color: var(--text-secondary);
-            font-style: italic;
-            font-size: 0.85rem; /* Reduced font size */
-        }
-
-        .meta-section h4 {
-            color: var(--primary-blue);
-            font-weight: 600;
-            margin-bottom: 0.4rem; /* Reduced margin */
-            font-size: 0.8rem; /* Reduced font size */
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .meta-section p {
-            color: var(--text-secondary);
-            font-size: 0.85rem; /* Reduced font size */
-            line-height: 1.5;
-            margin-bottom: 0.6rem; /* Reduced margin */
-        }
-
-        .divider {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--border-medium), transparent);
-            margin: 2.5rem 0; /* Reduced margin */
-        }
-
-        .section-title {
-            font-family: 'Source Serif Pro', serif;
-            font-size: 1.6rem; /* Reduced font size */
-            font-weight: 600;
-            color: var(--dark-blue);
-            margin-bottom: 1.2rem; /* Reduced margin */
-            padding-bottom: 0.4rem; /* Reduced padding */
-            border-bottom: 2px solid var(--accent-blue);
-            display: inline-block;
-        }
-
-        .abstract-text {
-            font-size: 1rem; /* Reduced font size */
-            line-height: 1.7; /* Reduced line height */
-            color: var(--text-secondary);
-            text-align: justify;
-            margin-bottom: 1.5rem; /* Reduced margin */
-            padding: 1.5rem; /* Reduced padding */
-            background: var(--background-alt);
-            border-radius: 8px;
-            border: 1px solid var(--border-light);
-            position: relative;
-        }
-
-        .abstract-text::before {
-            content: '"';
-            font-size: 3.5rem; /* Reduced font size */
-            color: var(--accent-blue);
-            position: absolute;
-            top: 0.3rem; /* Adjusted position */
-            left: 0.8rem; /* Adjusted position */
-            opacity: 0.3;
-            font-family: serif;
-        }
-        
-        .abstract-text ul {
-            list-style-type: disc;
-            margin-left: 1.2rem; /* Reduced margin */
-            margin-top: 0.8rem; /* Reduced margin */
-            margin-bottom: 0.8rem; /* Reduced margin */
-            line-height: 1.6;
-        }
-
-        .topics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted minmax for smaller items */
-            gap: 0.8rem; /* Reduced gap */
-            margin: 1.2rem 0; /* Reduced margin */
-        }
-
-        .topic-item {
-            background: var(--background);
-            padding: 0.8rem 1rem; /* Reduced padding */
-            border-radius: 5px; /* Slightly reduced border-radius */
-            border: 1px solid var(--border-light);
-            font-size: 0.9rem; /* Reduced font size */
-            color: var(--text-secondary);
-            transition: all 0.2s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .topic-item::before {
-            content: '•';
-            color: var(--accent-blue);
-            font-weight: bold;
-            margin-right: 0.4rem; /* Reduced margin */
-        }
-
-        .topic-item:hover {
-            border-color: var(--accent-blue);
-            background: var(--background-alt);
-        }
-
-        .call-to-action {
-            background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
-            color: white;
-            padding: 1.8rem; /* Reduced padding */
-            border-radius: 8px;
-            text-align: center;
-            margin-top: 2.5rem; /* Reduced margin */
-            margin-bottom: 0;
-        }
-
-        .call-to-action h2 {
-            margin-bottom: 0.8rem; /* Reduced margin */
-            font-size: 1.4rem; /* Reduced font size */
-        }
-
-        .call-to-action p {
-            opacity: 0.9;
-            line-height: 1.5; /* Reduced line height */
-            max-width: 550px; /* Slightly reduced max-width */
-            margin: 0 auto;
-            font-size: 0.9rem; /* Reduced font size */
-        }
-
-        @media (max-width: 768px) {
-            .document-container {
-                margin: 0.8rem; /* Reduced margin */
-                border-radius: 6px; /* Reduced border-radius */
-            }
-
-            .header {
-                padding: 1.8rem 1.2rem; /* Reduced padding */
-            }
-
-            .main-title {
-                font-size: 1.8rem; /* Reduced font size */
-            }
-
-            .content {
-                padding: 1.8rem 1.2rem; /* Reduced padding */
-            }
-
-            .meta-info {
-                grid-template-columns: 1fr;
-                gap: 0.8rem; /* Reduced gap */
-                padding: 1.2rem; /* Reduced padding */
-            }
-
-            .topics-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media print {
-            .document-container {
-                max-width: none;
-                margin: 0;
-                border-radius: 0;
-                box-shadow: none;
-                border: none;
-            }
-
-            .header {
-                background: var(--primary-blue) !important;
-                -webkit-print-color-adjust: exact;
-                color-adjust: exact;
-            }
-
-            .content {
-                padding: 1.5rem; /* Reduced padding for print */
-            }
-        }
-    </style>
+    }
+</style>
 </head>
 <body>
-    <div class="document-container">
-        <header class="header">
-            <div class="header-content">
-                <div class="conference-badge">IEEE WCCI 2026 Special Session</div>
-                <h1 class="main-title">Advances in Trustworthy XAI: Novel Methodologies, Benchmarking, and Diverse Data Modality Contexts</h1>
-            </div>
-        </header>
+<div class="page">
+    <header>
+        <div class="badge">IEEE WCCI 2026 Special Session</div>
+        <h1>Advances in Trustworthy XAI: Methodologies, Benchmarking & Diverse Data Contexts</h1>
+    </header>
 
-        <div class="content">
-            <div class="meta-info">
-                <div class="meta-section">
-                    <h4>Organizers</h4>
-                    <ul class="organizers-list">
-                        <li>
-                            <span class="name">Imen Jdey</span>
-                            <span class="affiliation">(REGIM Lab, Sfax University)</span>
-                        </li>
-                        <li>
-                            <span class="name">M. Tanveer</span>
-                            <span class="affiliation">(Indian Institute of Technology Indore, India)</span>
-                        </li>
-                        <li>
-                            <span class="name">Fadoua Drira</span>
-                            <span class="affiliation">(REGIM Lab, Sfax University)</span>
-                        </li>
-                        <li>
-                            <span class="name">Rahma Fourati</span>
-                            <span class="affiliation">(REGIM Lab, Jendouba University)</span>
-                        </li>
-                    </ul>
-            
-                    <h4>Primary Contact & Details</h4>
-                    <p>
-                        Imen Jdey<br>
-                        Email: <a href="mailto:imen.jdey@ieee.org" style="color: var(--primary-blue); text-decoration: none;">imen.jdey@ieee.org</a>
-                    </p>
-                  
-                </div>
-            </div>
-
-            <section>
-                <h2 class="section-title">Abstract</h2>
-                <div class="abstract-text">
-                   The adoption of computational intelligence in high-stakes domains requires trust in complex model decisions.
-                    This trust is built on rigorous methodological frameworks and standardized evaluation protocols.
-                    This special session is an interdisciplinary forum dedicated to exploring novel methods and rigorous benchmarking in eXplainable AI (XAI), 
-                    specifically emphasizing innovation for diverse data modalities: images, audio, array, and multimodal data
-                    We will welcome contributions that tackle fundamental challenges by focusing on:
-                    <ul>
-                        <li>Developing and detailing novel XAI methodologies tailored to different data types.</li>
-                        <li>Comparative studies and rigorous benchmarking of existing and new XAI techniques.</li>
-                        <li>Establishing standardized metrics and protocols for evaluating explanations across diverse real-world applications.</li>
-                    </ul>
-                    The ultimate goal is to foster a dialogue that moves beyond pure performance metrics to a holistic framework for responsible and transparent AI deployment.
-                </div>
-            </section>
-
-            <div class="divider"></div>
-
-            <section>
-                <h2 class="section-title">Topics of Interest</h2>
-                Topics of interest include, but are not limited to:
-                <div class="topics-grid">
-                    <div class="topic-item">Novel XAI Methodologies and Implementations for Image and Audio Analysis</div>
-                    <div class="topic-item">Comparative Benchmarking of Interpretable Deep Learning Models for Array and Tabular Data</div>
-                    <div class="topic-item">Algorithmic Methods for Fusing and Evaluating Explanations in Multimodal Systems</div>
-                    <div class="topic-item">Rigorous Evaluation and Standardized Metrics for XAI Visualization Techniques</div>
-                    <div class="topic-item">Formal Protocols and Metrics for Evaluating Human-in-the-Loop XAI Effectiveness</div>
-                    <div class="topic-item">Benchmarking and Comparative Studies of Algorithmic Auditing Techniques</div>
-                    <div class="topic-item">Methodologies and Benchmarks for Quantifying and Mitigating Bias in Explanations</div>
-                    <div class="topic-item">Concrete Methods and Comparative Studies of Causal and Counterfactual XAI for Different Data Modalities</div>
-                    <div class="topic-item">Methodological Integration of XAI with Fuzzy Systems and Evolutionary Computation</div>
-                    <div class="topic-item">Benchmark Datasets and Metrics for Evaluating Explanations</div>
-                    <div class="topic-item">XAI Methodologies in Signal Processing and Time-Series Analysis</div>
-                </div>
-            </section>
-
-            <div class="divider"></div>
-
-            <div class="call-to-action">
-                <h2>Call for Papers</h2>
-                <p>We welcome submissions on the topics listed above. All papers will be subject to the same rigorous peer-review process as regular WCCI 2026 submissions.
-                    Authors are encouraged to submit early. For submission details and deadlines, please refer to the official WCCI 2026 conference website.
-                
-                <a href="https://attend.ieee.org/wcci-2026/" style="color: white; text-decoration: underline;">https://attend.ieee.org/wcci-2026/</a>
-                </p>
-            </div>
+    <section>
+        <h2>Organizers</h2>
+        <div class="organizers">
+            <p><strong>Imen Jdey</strong> (REGIM Lab, University of Sfax, Tunisia) – <a href="mailto:imen.jdey@ieee.org" style="color:white;">imen.jdey@ieee.org</a></p>
+            <p><strong>M. Tanveer</strong> (Indian Institute of Technology Indore, India)</p>
+            <p><strong>Fadoua Drira</strong> (REGIM Lab, University of Sfax, Tunisia)</p>
+            <p><strong>Rahma Fourati</strong> (REGIM Lab, University of Jendouba, Tunisia)</p>
         </div>
+    </section>
+
+    <section>
+        <h2>Abstract</h2>
+        <p>
+            This special session aims to advance <strong>methodological rigor and benchmarking in eXplainable AI (XAI)</strong>
+            across diverse data modalities—image, audio, tabular, and multimodal contexts.
+            It invites research that develops, compares, and evaluates novel XAI techniques to
+            strengthen transparency and trust in computational intelligence.
+        </p>
+        <ul>
+            <li>Novel XAI methods tailored to different data modalities.</li>
+            <li>Comparative studies and benchmarking of interpretable models.</li>
+            <li>Standardized evaluation metrics and protocols for explanations.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Topics of Interest</h2>
+        <ul class="topics">
+            <li>XAI methodologies for image, audio, and time-series data</li>
+            <li>Comparative benchmarking of interpretable models</li>
+            <li>Fusion and evaluation of multimodal explanations</li>
+            <li>Metrics for human-in-the-loop explainability</li>
+            <li>Auditing and bias quantification in explanations</li>
+            <li>Causal and counterfactual explainability</li>
+            <li>XAI for fuzzy and evolutionary systems</li>
+            <li>Benchmark datasets and evaluation protocols</li>
+        </ul>
+    </section>
+
+    <div class="cta">
+        <strong>Call for Papers:</strong> Submissions follow WCCI 2026 peer review.
+        Visit <a href="https://attend.ieee.org/wcci-2026/">https://attend.ieee.org/wcci-2026/</a> for details.
     </div>
+</div>
 </body>
 </html>
