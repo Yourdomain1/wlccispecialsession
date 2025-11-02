@@ -29,8 +29,8 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-            font-size: 16px;
-            line-height: 1.7;
+            font-size: 15px; /* Slightly reduced base font size */
+            line-height: 1.6; /* Slightly reduced line height */
             color: var(--text-primary);
             background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
             min-height: 100vh;
@@ -38,9 +38,9 @@
 
         .document-container {
             max-width: 210mm;
-            margin: 2rem auto;
+            margin: 1.5rem auto; /* Reduced margin */
             background: var(--background);
-            border-radius: 12px;
+            border-radius: 10px; /* Slightly reduced border-radius */
             box-shadow: var(--shadow-lg);
             overflow: hidden;
             border: 1px solid var(--border-light);
@@ -49,7 +49,7 @@
         .header {
             background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
             color: white;
-            padding: 3rem 3rem 2rem;
+            padding: 2.5rem 2.5rem 1.5rem; /* Reduced padding */
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -74,42 +74,42 @@
         .conference-badge {
             display: inline-block;
             background: rgba(255, 255, 255, 0.15);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.875rem;
+            padding: 0.4rem 0.8rem; /* Reduced padding */
+            border-radius: 18px; /* Slightly reduced border-radius */
+            font-size: 0.8rem; /* Slightly reduced font size */
             font-weight: 500;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem; /* Reduced margin */
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .main-title {
             font-family: 'Source Serif Pro', serif;
-            font-size: 2.5rem;
+            font-size: 2.2rem; /* Reduced font size */
             font-weight: 600;
             line-height: 1.2;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.6rem; /* Reduced margin */
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .subtitle {
-            font-size: 1.25rem;
+            font-size: 1.1rem; /* Reduced font size */
             font-weight: 400;
             opacity: 0.9;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem; /* Reduced margin */
             line-height: 1.4;
         }
 
         .content {
-            padding: 3rem;
+            padding: 2.5rem; /* Reduced padding */
         }
 
         .meta-info {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-bottom: 3rem;
-            padding: 2rem;
+            gap: 1.5rem; /* Reduced gap */
+            margin-bottom: 2.5rem; /* Reduced margin */
+            padding: 1.5rem; /* Reduced padding */
             background: var(--background-alt);
             border-radius: 8px;
             border-left: 4px solid var(--primary-blue);
@@ -121,63 +121,63 @@
         }
 
         .organizers-list li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem; /* Reduced margin */
             color: var(--text-primary);
-            font-size: 0.95rem;
+            font-size: 0.9rem; /* Reduced font size */
         }
 
         .organizers-list .name {
             font-weight: 600;
             color: var(--primary-blue);
-            margin-right: 0.5rem;
+            margin-right: 0.4rem; /* Reduced margin */
         }
 
         .organizers-list .affiliation {
             color: var(--text-secondary);
             font-style: italic;
-            font-size: 0.9rem;
+            font-size: 0.85rem; /* Reduced font size */
         }
 
         .meta-section h4 {
             color: var(--primary-blue);
             font-weight: 600;
-            margin-bottom: 0.5rem;
-            font-size: 0.875rem;
+            margin-bottom: 0.4rem; /* Reduced margin */
+            font-size: 0.8rem; /* Reduced font size */
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
 
         .meta-section p {
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            font-size: 0.85rem; /* Reduced font size */
             line-height: 1.5;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.6rem; /* Reduced margin */
         }
 
         .divider {
             height: 1px;
             background: linear-gradient(90deg, transparent, var(--border-medium), transparent);
-            margin: 3rem 0;
+            margin: 2.5rem 0; /* Reduced margin */
         }
 
         .section-title {
             font-family: 'Source Serif Pro', serif;
-            font-size: 1.75rem;
+            font-size: 1.6rem; /* Reduced font size */
             font-weight: 600;
             color: var(--dark-blue);
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
+            margin-bottom: 1.2rem; /* Reduced margin */
+            padding-bottom: 0.4rem; /* Reduced padding */
             border-bottom: 2px solid var(--accent-blue);
             display: inline-block;
         }
 
         .abstract-text {
-            font-size: 1.05rem;
-            line-height: 1.8;
+            font-size: 1rem; /* Reduced font size */
+            line-height: 1.7; /* Reduced line height */
             color: var(--text-secondary);
             text-align: justify;
-            margin-bottom: 2rem;
-            padding: 2rem;
+            margin-bottom: 1.5rem; /* Reduced margin */
+            padding: 1.5rem; /* Reduced padding */
             background: var(--background-alt);
             border-radius: 8px;
             border: 1px solid var(--border-light);
@@ -186,36 +186,36 @@
 
         .abstract-text::before {
             content: '"';
-            font-size: 4rem;
+            font-size: 3.5rem; /* Reduced font size */
             color: var(--accent-blue);
             position: absolute;
-            top: 0.5rem;
-            left: 1rem;
+            top: 0.3rem; /* Adjusted position */
+            left: 0.8rem; /* Adjusted position */
             opacity: 0.3;
             font-family: serif;
         }
         
         .abstract-text ul {
             list-style-type: disc;
-            margin-left: 1.5rem;
-            margin-top: 1rem;
-            margin-bottom: 1rem;
+            margin-left: 1.2rem; /* Reduced margin */
+            margin-top: 0.8rem; /* Reduced margin */
+            margin-bottom: 0.8rem; /* Reduced margin */
             line-height: 1.6;
         }
 
         .topics-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
-            margin: 1.5rem 0;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted minmax for smaller items */
+            gap: 0.8rem; /* Reduced gap */
+            margin: 1.2rem 0; /* Reduced margin */
         }
 
         .topic-item {
             background: var(--background);
-            padding: 1rem 1.25rem;
-            border-radius: 6px;
+            padding: 0.8rem 1rem; /* Reduced padding */
+            border-radius: 5px; /* Slightly reduced border-radius */
             border: 1px solid var(--border-light);
-            font-size: 0.95rem;
+            font-size: 0.9rem; /* Reduced font size */
             color: var(--text-secondary);
             transition: all 0.2s ease;
             position: relative;
@@ -226,7 +226,7 @@
             content: '•';
             color: var(--accent-blue);
             font-weight: bold;
-            margin-right: 0.5rem;
+            margin-right: 0.4rem; /* Reduced margin */
         }
 
         .topic-item:hover {
@@ -237,47 +237,48 @@
         .call-to-action {
             background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
             color: white;
-            padding: 2rem;
+            padding: 1.8rem; /* Reduced padding */
             border-radius: 8px;
             text-align: center;
-            margin-top: 3rem;
+            margin-top: 2.5rem; /* Reduced margin */
             margin-bottom: 0;
         }
 
         .call-to-action h2 {
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
+            margin-bottom: 0.8rem; /* Reduced margin */
+            font-size: 1.4rem; /* Reduced font size */
         }
 
         .call-to-action p {
             opacity: 0.9;
-            line-height: 1.6;
-            max-width: 600px;
+            line-height: 1.5; /* Reduced line height */
+            max-width: 550px; /* Slightly reduced max-width */
             margin: 0 auto;
+            font-size: 0.9rem; /* Reduced font size */
         }
 
         @media (max-width: 768px) {
             .document-container {
-                margin: 1rem;
-                border-radius: 8px;
+                margin: 0.8rem; /* Reduced margin */
+                border-radius: 6px; /* Reduced border-radius */
             }
 
             .header {
-                padding: 2rem 1.5rem;
+                padding: 1.8rem 1.2rem; /* Reduced padding */
             }
 
             .main-title {
-                font-size: 2rem;
+                font-size: 1.8rem; /* Reduced font size */
             }
 
             .content {
-                padding: 2rem 1.5rem;
+                padding: 1.8rem 1.2rem; /* Reduced padding */
             }
 
             .meta-info {
                 grid-template-columns: 1fr;
-                gap: 1rem;
-                padding: 1.5rem;
+                gap: 0.8rem; /* Reduced gap */
+                padding: 1.2rem; /* Reduced padding */
             }
 
             .topics-grid {
@@ -301,7 +302,7 @@
             }
 
             .content {
-                padding: 2rem;
+                padding: 1.5rem; /* Reduced padding for print */
             }
         }
     </style>
@@ -338,18 +339,13 @@
                             <span class="affiliation">(REGIM Lab, Jendouba University)</span>
                         </li>
                     </ul>
-                </div>
-                
-                <div class="meta-section">
+            
                     <h4>Primary Contact & Details</h4>
                     <p>
                         Imen Jdey<br>
                         Email: <a href="mailto:imen.jdey@ieee.org" style="color: var(--primary-blue); text-decoration: none;">imen.jdey@ieee.org</a>
                     </p>
-                    <p>
-                        Session Webpage<br>
-                        <a href="https://yourdomain1.github.io/wlccispecialsession/" style="color: var(--primary-blue); text-decoration: none;">https://yourdomain1.github.io/wlccispecialsession/</a>
-                    </p>
+                  
                 </div>
             </div>
 
