@@ -14,13 +14,10 @@
             --accent-blue: #4da6ff;
             --text-primary: #1a1a1a;
             --text-secondary: #4a4a4a;
-            --text-muted: #6b7280;
             --background: #ffffff;
             --background-alt: #f8fafc;
             --border-light: #e2e8f0;
             --border-medium: #cbd5e1;
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
 
@@ -174,50 +171,6 @@
             display: inline-block;
         }
 
-        .subsection-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--primary-blue);
-            margin: 2rem 0 1rem;
-            display: flex;
-            align-items: center;
-        }
-
-        .subsection-title::before {
-            content: '';
-            width: 4px;
-            height: 20px;
-            background: var(--accent-blue);
-            margin-right: 0.75rem;
-            border-radius: 2px;
-        }
-
-        .bio-card {
-            background: var(--background-alt);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            border-left: 4px solid var(--accent-blue);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .bio-card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .bio-name {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--primary-blue);
-            margin-bottom: 0.5rem;
-        }
-
-        .bio-text {
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
         .abstract-text {
             font-size: 1.05rem;
             line-height: 1.8;
@@ -281,74 +234,6 @@
             background: var(--background-alt);
         }
 
-        .relevance-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .relevance-card {
-            background: var(--background);
-            border: 1px solid var(--border-light);
-            border-radius: 8px;
-            padding: 1.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .relevance-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-md);
-            border-color: var(--accent-blue);
-        }
-
-        .conference-name {
-            font-weight: 600;
-            color: var(--primary-blue);
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .activities-section {
-            background: var(--background-alt);
-            padding: 2rem;
-            border-radius: 8px;
-            border: 1px solid var(--border-light);
-            margin: 2rem 0;
-        }
-
-        .activity-highlight {
-            background: var(--primary-blue);
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            display: inline-block;
-            margin-bottom: 1rem;
-        }
-
-        .activity-details {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin: 1rem 0;
-        }
-
-        .activity-detail {
-            padding: 1rem;
-            background: var(--background);
-            border-radius: 6px;
-            border-left: 3px solid var(--accent-blue);
-        }
-
-        .detail-label {
-            font-weight: 600;
-            color: var(--primary-blue);
-            font-size: 0.875rem;
-            margin-bottom: 0.25rem;
-        }
-
         .call-to-action {
             background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
             color: white;
@@ -356,6 +241,7 @@
             border-radius: 8px;
             text-align: center;
             margin-top: 3rem;
+            margin-bottom: 0;
         }
 
         .call-to-action h2 {
@@ -394,8 +280,7 @@
                 padding: 1.5rem;
             }
 
-            .topics-grid,
-            .relevance-grid {
+            .topics-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -473,15 +358,15 @@
                 <div class="abstract-text">
                     The widespread adoption of computational intelligence across various high-stakes domains, from computer vision to signal processing and beyond, is heavily reliant on our ability to understand and trust the decisions made by these complex models.
                     To ensure responsible deployment, this trust must be built upon rigorous methodological frameworks and clear, standardized evaluation protocols.
-                    This special session will serve as a focused, interdisciplinary forum to explore novel methodological frameworks, concrete techniques, and rigorous benchmarking in eXplainable and interpretable AI (XAI). Our specific emphasis will be on methodological innovation for diverse data modalities: 
-                    images, audio (signal), array data, and multimodal data, coupled with clear evaluation protocols.
+                    This special session will serve as a focused, interdisciplinary forum to explore novel methodological frameworks, concrete techniques, and rigorous benchmarking in **eXplainable and interpretable AI (XAI)**. Our specific emphasis will be on methodological innovation for diverse data modalities: 
+                    **images, audio (signal), array data, and multimodal data**, coupled with clear evaluation protocols.
                     We will welcome contributions that tackle fundamental challenges by focusing on:
                     <ul>
                         <li>Developing and detailing novel XAI methodologies tailored to different data types.</li>
                         <li>Comparative studies and rigorous benchmarking of existing and new XAI techniques.</li>
                         <li>Establishing standardized metrics and protocols for evaluating explanations across diverse real-world applications.</li>
                     </ul>
-                    The ultimate goal is to foster a dialogue that moves beyond pure performance metrics to a holistic framework for responsible and transparent AI deployment.
+                    The ultimate goal is to foster a dialogue that moves beyond pure performance metrics to a **holistic framework for responsible and transparent AI deployment**.
                 </div>
             </section>
 
@@ -507,96 +392,13 @@
 
             <div class="divider"></div>
 
-            <section>
-                <h2 class="section-title">Relevance to WCCI</h2>
-                <p>This special session aligns directly with the themes of the WCCI's three flagship conferences:</p>
-                <div class="relevance-grid">
-                    <div class="relevance-card">
-                        <span class="conference-name">IJCNN (International Joint Conference on Neural Networks)</span>
-                        <p>The session will showcase the latest advancements in XAI for deep neural networks, including CNNs, ViTs, and other architectures, which are central to modern computer vision and signal processing.</p>
-                    </div>
-                    <div class="relevance-card">
-                        <span class="conference-name">FUZZ-IEEE (IEEE International Conference on Fuzzy Systems)</span>
-                        <p>We will explore how fuzzy logic and fuzzy systems can be used to develop intrinsically interpretable models and to provide human-understandable explanations for black-box models.</p>
-                    </div>
-                    <div class="relevance-card">
-                        <span class="conference-name">IEEE CEC (IEEE Congress on Evolutionary Computation)</span>
-                        <p>The session will address the application of evolutionary algorithms to optimize and generate more interpretable models, as well as the use of XAI to understand the decision-making process of complex evolutionary systems.</p>
-                    </div>
-                </div>
-            </section>
-
-            <div class="divider"></div>
-
-            <section>
-                <h2 class="section-title">Organizer Biographies</h2>
-                <div class="bio-card">
-                    <div class="bio-name">Imen Jdey</div>
-                    <div class="bio-text">Imen Jdey is a researcher at REGIM Lab, Sfax University. Her research interests are centered on machine learning and signal processing, with a particular focus on the development of eXplainable AI (XAI) methods. She is dedicated to creating transparent and trustworthy models for a variety of data types, including audio and multimodal data, to ensure that AI systems are not only accurate but also understandable and reliable.</div>
-                </div>
-               <div class="bio-card">
-                    <div class="bio-name">M. Tanveer</div>
-                    <div class="bio-text">M. Tanveer is a Professor and Ramanujan Fellow at the Department of Mathematics of the Indian Institute of Technology Indore. His research spans a wide range of topics, including support vector machines, optimization, machine learning, and deep learning, with applications to biomedical signal processing and Alzheimer's disease. His work focuses on creating robust and trustworthy AI models, which is directly relevant to the session's emphasis on eXplainable AI (XAI).</div>
-                </div>
-                <div class="bio-card">
-                    <div class="bio-name">Fadoua Drira</div>
-                    <div class="bio-text">Fadoua Drira is an Associate Professor in the Department of Computer Science at ENIS University of Sfax and the head of the Research Groups on Intelligent Machines Laboratory (ReGIM-Lab). Her research interests include computational intelligence, image processing, and computer vision. Her work, including a recent paper on explainable skin cancer diagnosis using Vision Transformers, demonstrates her commitment to applying explainable AI techniques to real-world medical and vision-based challenges.</div>
-                </div>
-
-                <div class="bio-card">
-                    <div class="bio-name">Rahma Fourati</div>
-                    <div class="bio-text">Rahma Fourati is a researcher at REGIM Lab, Jendouba University. Her research interests are in neural networks, generative models, and EEG signal analysis, with a focus on applications such as epileptic seizure prediction. She has worked on topics related to model compression and efficient neural networks, which are crucial for the practical deployment of AI systems. Her interest in EEG signals and other biomedical data aligns perfectly with the session's focus on XAI for diverse data modalities.</div>
-                </div>
-            </section>
-
-            <div class="divider"></div>
-
-            <section>
-                <h2 class="section-title">Expected Benefit</h2>
-                <p>The proposed special session will benefit the WCCI community by creating a dedicated venue for this rapidly growing and critical field. It will attract high-quality submissions from researchers across different disciplines and will foster new collaborations, bridging the gap between theoretical XAI research and its practical application to diverse data modalities. We aim to contribute to the WCCI's mission of promoting computational intelligence research that is not only powerful but also transparent, trustworthy, and responsible.</p>
-            </section>
-            
-            <div class="divider"></div>
-
-            <section>
-                <h2 class="section-title">Additional Activities</h2>
-                <div class="activities-section">
-                    <div class="activity-highlight">Open Discussion Slot (ODS)</div>
-                    <p>To enhance participant engagement and foster deeper dialogue, this special session will incorporate an interactive discussion format designed to go beyond traditional paper presentations and create a collaborative environment for attendees.</p>
-                    
-                    <div class="activity-details">
-                        <div class="activity-detail">
-                            <div class="detail-label">Format</div>
-                            <p>Facilitated, interactive discussion following paper presentations</p>
-                        </div>
-                        <div class="activity-detail">
-                            <div class="detail-label">Duration</div>
-                            <p>30-minute dedicated slot at session end</p>
-                        </div>
-                        <div class="activity-detail">
-                            <div class="detail-label">Facilitators</div>
-                            <p>Session organizers M. Tanveer and Imen Jdey will co-facilitate the discussion.</p>
-                        </div>
-                        <div class="activity-detail">
-                            <div class="detail-label">Purpose</div>
-                            <p>Bridge theory and practice, encourage collaborations, and identify future research directions in XAI.</p>
-                        </div>
-                    </div>
-
-                    <h4 class="subsection-title">Expected Benefits</h4>
-                    <p>The ODS will serve as a dynamic forum for attendees to share insights, raise critical questions, and brainstorm solutions collectively. It will allow for a free-flowing exchange of ideas that may not fit into the Q&A segment of individual paper presentations. This format is intended to bridge the gap between theoretical research and practical challenges, encouraging new collaborations and helping to identify future research directions in XAI for diverse data modalities.</p>
-                </div>
-            </section>
-
-            <div class="divider"></div>
-
             <div class="call-to-action">
                 <h2>Call for Papers</h2>
                 <p>We welcome submissions on the topics listed above. All papers will be subject to the same rigorous peer-review process as regular WCCI 2026 submissions.
-                    Authors are encouraged to submit early. For submission details and deadlines, please refer to the official WCCI 2026 conference website .
-               
-    <a href="https://attend.ieee.org/wcci-2026/" style="color: var(--primary-blue); text-decoration: none;">https://attend.ieee.org/wcci-2026/</a>
-</p>
+                    Authors are encouraged to submit early. For submission details and deadlines, please refer to the official WCCI 2026 conference website.
+                
+                <a href="https://attend.ieee.org/wcci-2026/" style="color: white; text-decoration: underline;">https://attend.ieee.org/wcci-2026/</a>
+                </p>
             </div>
         </div>
     </div>
