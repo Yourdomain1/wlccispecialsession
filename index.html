@@ -23,19 +23,17 @@
 
     .page {
         max-width: 800px;
-        margin: 15px auto; /* Réduction de la marge */
-        padding: 15px 25px; /* Réduction du padding */
+        margin: 15px auto;
+        padding: 15px 25px;
         border: 1px solid #ddd;
-        border-radius: 6px; /* Réduction du border-radius */
-        font-size: 13px; /* Taille de base légèrement réduite */
-        line-height: 1.4; /* Interligne réduit */
+        border-radius: 6px;
+        font-size: 13px;
+        line-height: 1.4;
     }
 
     img.banner {
         width: 100%;
-        /* max-height: 120px; */ /* Supprimé pour éviter le recadrage */
-        height: auto; /* Ajouté pour s'assurer que la hauteur s'adapte */
-        /* object-fit: cover; */ /* Supprimé pour afficher l'image entière */
+        height: auto; 
         border-radius: 4px;
         margin-bottom: 10px;
     }
@@ -43,55 +41,55 @@
     header {
         text-align: center;
         border-bottom: 2px solid var(--blue);
-        padding-bottom: 8px; /* Réduction du padding */
-        margin-bottom: 12px; /* Réduction de la marge */
+        padding-bottom: 8px;
+        margin-bottom: 12px;
     }
 
     .badge {
         background: var(--blue);
         color: white;
-        padding: 3px 8px; /* Réduction du padding */
+        padding: 3px 8px;
         border-radius: 10px;
-        font-size: 11px; /* Réduction de la taille de police */
+        font-size: 11px;
         display: inline-block;
-        margin-bottom: 6px; /* Réduction de la marge */
+        margin-bottom: 6px;
     }
 
     h1 {
         font-family: 'Source Serif Pro', serif;
-        font-size: 16px; /* Réduction de la taille de police */
+        font-size: 16px;
         font-weight: 600;
         color: var(--blue);
         margin: 0;
     }
 
     section {
-        margin-bottom: 15px; /* Réduction de la marge */
+        margin-bottom: 15px;
     }
 
     h2 {
         font-family: 'Source Serif Pro', serif;
-        font-size: 14px; /* Réduction de la taille de police */
+        font-size: 14px;
         color: var(--blue);
-        margin: 8px 0 5px; /* Réduction des marges */
+        margin: 8px 0 5px;
         border-bottom: 1px solid var(--light-blue);
         display: inline-block;
     }
 
     ul {
-        margin: 4px 0 4px 16px; /* Réduction de la marge */
+        margin: 4px 0 4px 16px;
         padding: 0;
     }
 
     li {
-        margin-bottom: 2px; /* Réduction de la marge */
+        margin-bottom: 2px;
     }
 
     .organizers {
         background: var(--light-blue);
-        padding: 8px; /* Réduction du padding */
+        padding: 8px;
         border-radius: 4px;
-        font-size: 12px; /* Réduction de la taille de police */
+        font-size: 12px;
     }
 
     .organizers strong {
@@ -99,27 +97,27 @@
     }
 
     .organizers p {
-        margin: 2px 0; /* Ajout d'une petite marge */
+        margin: 2px 0;
     }
 
     .abstract-text {
-        font-size: 13px; /* Taille de l'abstract maintenue à 13px pour la compacité */
-        line-height: 1.4; /* Interligne réduit */
+        font-size: 13px;
+        line-height: 1.4;
     }
 
     .topics {
         columns: 2;
-        column-gap: 15px; /* Réduction de l'espace entre les colonnes */
-        font-size: 13px; /* Assurer une petite taille */
+        column-gap: 15px;
+        font-size: 13px;
     }
 
     .cta {
         background: var(--blue);
         color: white;
         text-align: center;
-        padding: 8px; /* Réduction du padding */
+        padding: 8px;
         border-radius: 4px;
-        font-size: 12px; /* Réduction de la taille de police */
+        font-size: 12px;
         margin-top: 15px;
     }
 
@@ -128,16 +126,96 @@
         text-decoration: underline;
     }
 
+    /* ========================================================= */
+    /* STYLES SPÉCIFIQUES À L'IMPRESSION (@media print) */
+    /* ========================================================= */
     @media print {
         .page {
             border: none;
             margin: 0;
-            padding: 8mm 10mm;
-            font-size: 11pt;
+            padding: 5mm 6mm; /* RÉDUCTION AGRESSIVE */
+            font-size: 9.5pt; /* RÉDUCTION */
+            line-height: 1.2; /* SERRÉ */
         }
+        
+        /* Bannière */
         img.banner {
-            max-height: 80px;
-            margin-bottom: 6px;
+            max-height: 60px;
+            margin-bottom: 4px; 
+            -webkit-print-color-adjust: exact !important; 
+            print-color-adjust: exact !important;
+        }
+
+        /* Suppression des couleurs de fond pour l'impression */
+        .organizers, .cta {
+            background: none !important;
+            padding: 0;
+            border: 1px solid #ccc !important;
+        }
+
+        /* Titres */
+        header {
+            padding-bottom: 4px;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #333; /* Rendre la ligne plus visible */
+        }
+        h1 {
+            font-size: 13pt; 
+            margin-bottom: 3px;
+        }
+        h2 {
+            font-size: 11pt;
+            margin: 6pt 0 3pt;
+            border-bottom: none;
+        }
+
+        /* Contenu et Listes */
+        section {
+             margin-bottom: 8px; /* RÉDUCTION */
+        }
+
+        .organizers, .abstract-text, .topics li {
+            font-size: 8.5pt; /* RÉDUCTION */
+            line-height: 1.2;
+        }
+
+        .organizers p {
+            margin: 1pt 0;
+        }
+        
+        .organizers strong {
+            color: black; /* S'assurer que le gras s'affiche bien */
+        }
+
+        .topics {
+            columns: 2 !important; 
+            column-gap: 8px; /* RÉDUCTION */
+            -webkit-column-break-inside: avoid;
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+
+        /* CTA et Badges */
+        .badge {
+            font-size: 8pt;
+            padding: 2px 5px;
+            -webkit-print-color-adjust: exact !important; 
+            print-color-adjust: exact !important;
+        }
+        .cta {
+            font-size: 9pt;
+            padding: 6px;
+            margin-top: 8px; /* RÉDUCTION */
+        }
+        /* Rendre les liens noirs et sans soulignement confus */
+        .cta a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a {
+            color: black;
+            text-decoration: none;
         }
     }
 </style>
@@ -154,11 +232,11 @@
     <section>
         <h2>Organizers</h2>
         <div class="organizers">
-            <p><strong>Imen Jdey</strong> (REGIM Lab, University of Sfax, Tunisia) </p>
+            <p><strong>Imen Jdey</strong> (REGIM Lab, University of Sfax, Tunisia)</p>
             <p><strong>M. Tanveer</strong> (Indian Institute of Technology Indore, India)</p>
             <p><strong>Fadoua Drira</strong> (REGIM Lab, University of Sfax, Tunisia)</p>
             <p><strong>Rahma Fourati</strong> (REGIM Lab, University of Jendouba, Tunisia)</p>
-             <p><strong>Primary Contact & Details</strong>  ( imen.jdey@ieee.org) </a> </p>
+            <p><strong>Primary Contact:</strong> imen.jdey@ieee.org</p>
         </div>
     </section>
 
