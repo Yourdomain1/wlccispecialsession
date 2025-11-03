@@ -31,11 +31,21 @@
         line-height: 1.5;
     }
 
-    img.banner {
-        width: 100%;
-        height: auto; 
-        border-radius: 6px;
-        margin-bottom: 15px;
+    /* Removed img.banner styles as the element is gone */
+
+    .conference-title {
+        font-family: 'Source Serif Pro', serif;
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--text);
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .top-rule {
+        border: 0;
+        height: 2px;
+        background: var(--blue);
+        margin-bottom: 20px;
     }
 
     header {
@@ -190,7 +200,7 @@
     }
 
     /* ========================================================= */
-    /* PRINT STYLES (Kept minimal and functional) */
+    /* PRINT STYLES (Adjusted for no banner image) */
     /* ========================================================= */
     @media print {
         .page {
@@ -201,13 +211,10 @@
             line-height: 1.3; 
         }
         
-        img.banner {
-            max-height: 70px;
-            margin-bottom: 6px; 
-            -webkit-print-color-adjust: exact !important; 
-            print-color-adjust: exact !important;
+        .conference-title, .top-rule {
+            display: none; /* Hide the title/rule replacement for print */
         }
-
+        
         .organizers, .cta, .ods-paragraph, .submission-info, .deadlines-table th {
             background: none !important;
             padding: 0;
@@ -224,12 +231,17 @@
             font-size: 9.5pt; 
             line-height: 1.3;
         }
+        
+        header {
+            margin-top: 0;
+        }
     }
 </style>
 </head>
 <body>
 <div class="page">
-    
+    <div class="conference-title">2026 IEEE World Congress on Computational Intelligence (WCCI)</div>
+    <hr class="top-rule">
 
     <header>
         <div class="badge">IEEE WCCI 2026 Special Session</div>
@@ -239,7 +251,7 @@
     <section>
         <h2>Organizers & Contact</h2>
         <div class="organizers">
-            <p><strong>Organizers:</strong>Pr. Imen Jdey (REGIM Lab, Tunisia), Pr.M. Tanveer (IIT Indore, India), Pr. Fadoua Drira (REGIM Lab, Tunisia), Pr. Rahma Fourati (REGIM Lab, Tunisia)</p>
+            <p><strong>Organizers:</strong> Imen Jdey (REGIM Lab, Tunisia), M. Tanveer (IIT Indore, India), Fadoua Drira (REGIM Lab, Tunisia), Rahma Fourati (REGIM Lab, Tunisia)</p>
             <p><strong>Primary Contact:</strong> imen.jdey@ieee.org</p>
         </div>
     </section>
@@ -247,10 +259,10 @@
     <section>
         <h2>Abstract and Rationale</h2>
         <p class="abstract-text">
-            This special session addresses the crucial need for methodological rigor and standardized benchmarking in eXplainable AI (XAI) across diverse data modalities (image, audio, tabular, multimodal). We invite research that develops, compares, and rigorously evaluates novel XAI techniques to strengthen transparency and trust in computational intelligence systems.
+            This special session addresses the crucial need for methodological rigor and standardized benchmarking in eXplainable AI (XAI)across diverse data modalities (image, audio, tabular, multimodal). We invite research that develops, compares, and rigorously evaluates novel XAI techniques to strengthen transparency and trust in computational intelligence systems.
         </p>
         <p class="abstract-text">
-            The session creates a dedicated venue for this rapidly growing field, attracting high-quality submissions and fostering new collaborations. WCCI provides an ideal forum for this discussion, as it is the world’s premier event in computational intelligence, resulting from the convergence of IJCNN, IEEE CEC, and FUZZ-IEEE.
+            The session creates a dedicated venue for this rapidly growing field, attracting high-quality submissions and fostering new collaborations. **WCCI** provides an ideal forum for this discussion, as it is the world’s premier event in computational intelligence, resulting from the convergence of IJCNN, IEEE CEC, and FUZZ-IEEE.
         </p>
     </section>
     
@@ -301,7 +313,7 @@
         </table>
         
         <div class="submission-info">
-            <p>All papers must be submitted through the WCCI 2026 online submission system. For questions or more information, please email Imen JDEY at: **imen.jdey@ieee.org**</p>
+            <p>All papers must be submitted through the WCCI 2026 online submission system. For questions or more information, please email Imen JDEY at: <strong>imen.jdey@ieee.org</strong></p>
         </div>
     </section>
 
