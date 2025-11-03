@@ -23,32 +23,32 @@
 
     .page {
         max-width: 800px;
-        margin: 25px auto; /* Increased margin */
-        padding: 20px 30px; /* Increased padding */
+        margin: 25px auto;
+        padding: 20px 30px;
         border: 1px solid #ddd;
-        border-radius: 8px; /* Slightly rounder */
-        font-size: 14px; /* Increased base font size */
-        line-height: 1.5; /* Increased line height for better readability */
+        border-radius: 8px;
+        font-size: 14px;
+        line-height: 1.5;
     }
 
     img.banner {
         width: 100%;
         height: auto; 
-        border-radius: 6px; /* Slightly rounder */
-        margin-bottom: 15px; /* Increased margin */
+        border-radius: 6px;
+        margin-bottom: 15px;
     }
 
     header {
         text-align: center;
-        border-bottom: 3px solid var(--blue); /* Thicker line */
+        border-bottom: 3px solid var(--blue);
         padding-bottom: 10px;
-        margin-bottom: 18px; /* Increased margin */
+        margin-bottom: 18px;
     }
 
     .badge {
         background: var(--blue);
         color: white;
-        padding: 4px 10px; /* Slightly larger badge */
+        padding: 4px 10px;
         border-radius: 12px;
         font-size: 12px;
         font-weight: 500;
@@ -58,8 +58,8 @@
 
     h1 {
         font-family: 'Source Serif Pro', serif;
-        font-size: 22px; /* Increased size for prominence */
-        font-weight: 700; /* Bolder */
+        font-size: 22px;
+        font-weight: 700;
         color: var(--blue);
         margin: 0;
         line-height: 1.2;
@@ -71,13 +71,13 @@
 
     h2 {
         font-family: 'Source Serif Pro', serif;
-        font-size: 16px; /* Increased size */
+        font-size: 16px;
         font-weight: 600;
         color: var(--blue);
         margin: 10px 0 6px;
         border-bottom: 1px solid var(--light-blue);
         padding-bottom: 2px;
-        display: block; /* Use full width for clarity */
+        display: block;
     }
 
     ul {
@@ -86,14 +86,14 @@
     }
 
     li {
-        margin-bottom: 4px; /* More space between list items */
+        margin-bottom: 4px;
     }
 
     .organizers {
         background: var(--light-blue);
         padding: 10px;
         border-radius: 6px;
-        font-size: 13px; /* Slightly larger in this block */
+        font-size: 13px;
         line-height: 1.5;
     }
 
@@ -113,7 +113,7 @@
 
     .topics {
         columns: 2;
-        column-gap: 20px; /* More column gap */
+        column-gap: 20px;
         font-size: 14px;
     }
 
@@ -126,12 +126,26 @@
         background: var(--blue);
         color: white;
         text-align: center;
-        padding: 12px; /* Larger padding for emphasis */
+        padding: 12px;
         border-radius: 6px;
         font-size: 14px;
         font-weight: 500;
         display: block;
         margin: 15px 0 0;
+    }
+    
+    .submission-info {
+        background: #f0f0f0;
+        padding: 12px;
+        border-radius: 6px;
+        margin-top: 15px;
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .submission-info strong {
+        color: #000;
+        font-weight: 600;
     }
 
     a {
@@ -153,9 +167,30 @@
     .ods-paragraph strong {
         color: var(--blue);
     }
+    
+    .deadlines-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 8px;
+        font-size: 13px;
+    }
+    .deadlines-table th, .deadlines-table td {
+        border: 1px solid #ddd;
+        padding: 6px 10px;
+        text-align: left;
+    }
+    .deadlines-table th {
+        background-color: var(--light-blue);
+        color: var(--blue);
+        font-weight: 600;
+        width: 40%;
+    }
+    .deadlines-table td {
+        font-weight: 500;
+    }
 
     /* ========================================================= */
-    /* PRINT STYLES */
+    /* PRINT STYLES (Kept minimal and functional) */
     /* ========================================================= */
     @media print {
         .page {
@@ -166,74 +201,28 @@
             line-height: 1.3; 
         }
         
-        /* Banner */
         img.banner {
-            max-height: 70px; /* Slightly larger */
+            max-height: 70px;
             margin-bottom: 6px; 
             -webkit-print-color-adjust: exact !important; 
             print-color-adjust: exact !important;
         }
 
-        /* Color removal/Border tweaks */
-        .organizers, .cta, .ods-paragraph {
+        .organizers, .cta, .ods-paragraph, .submission-info, .deadlines-table th {
             background: none !important;
             padding: 0;
             border: 1px solid #ccc !important;
-            border-left: 3px solid #333 !important; /* Make ODS line black */
+            border-left: 3px solid #333 !important;
         }
-        .organizers { border: 1px solid #ccc !important; }
-        .cta { border: 1px solid #ccc !important; }
-
-        /* Titles */
-        header {
-            padding-bottom: 6px;
-            margin-bottom: 10px;
-            border-bottom: 2px solid #333; 
+        
+        .deadlines-table, .deadlines-table th, .deadlines-table td {
+             border: 1px solid #999 !important;
         }
-        h1 {
-            font-size: 14pt; 
-            margin-bottom: 3px;
-        }
-        h2 {
-            font-size: 12pt;
-            margin: 8pt 0 4pt;
-            border-bottom: 1px dashed #999;
-        }
-
-        /* Content and Lists */
-        section {
-             margin-bottom: 10px; 
-        }
-
-        .organizers, .abstract-text, .topics li, .ods-paragraph {
+        
+        /* General size adjustments */
+        .organizers, .abstract-text, .topics li, .ods-paragraph, .submission-info, .deadlines-table {
             font-size: 9.5pt; 
             line-height: 1.3;
-        }
-
-        .topics {
-            columns: 1 !important; 
-        }
-
-        /* CTA and Badges */
-        .badge {
-            font-size: 9pt;
-            padding: 2px 6px;
-            -webkit-print-color-adjust: exact !important; 
-            print-color-adjust: exact !important;
-        }
-        .cta {
-            font-size: 10pt;
-            padding: 8px;
-            margin-top: 10px; 
-        }
-        .cta a {
-            color: black;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        a {
-            color: black;
-            text-decoration: none;
         }
     }
 </style>
@@ -248,12 +237,9 @@
     </header>
 
     <section>
-        <h2>Organizers</h2>
+        <h2>Organizers & Contact</h2>
         <div class="organizers">
-            <p><strong>Imen Jdey</strong> (REGIM Lab, University of Sfax, Tunisia)</p>
-            <p><strong>M. Tanveer</strong> (Indian Institute of Technology Indore, India)</p>
-            <p><strong>Fadoua Drira</strong> (REGIM Lab, University of Sfax, Tunisia)</p>
-            <p><strong>Rahma Fourati</strong> (REGIM Lab, University of Jendouba, Tunisia)</p>
+            <p><strong>Organizers:</strong> Imen Jdey (REGIM Lab), M. Tanveer (IIT Indore), Fadoua Drira (REGIM Lab), Rahma Fourati (REGIM Lab)</p>
             <p><strong>Primary Contact:</strong> imen.jdey@ieee.org</p>
         </div>
     </section>
@@ -261,17 +247,17 @@
     <section>
         <h2>Abstract and Rationale</h2>
         <p class="abstract-text">
-            This special session addresses the crucial need for **methodological rigor and standardized benchmarking in eXplainable AI (XAI)** across diverse data modalities, including image, audio, tabular, and multimodal contexts. We invite research that develops, compares, and rigorously evaluates novel XAI techniques to strengthen **transparency and trust** in computational intelligence systems.
+            This special session addresses the crucial need for methodological rigor and standardized benchmarking in **eXplainable AI (XAI)** across diverse data modalities (image, audio, tabular, multimodal). We invite research that develops, compares, and rigorously evaluates novel XAI techniques to strengthen **transparency and trust** in computational intelligence systems.
         </p>
         <p class="abstract-text">
-            The session will create a dedicated venue for this rapidly growing and critical field, attracting high-quality submissions and fostering new collaborations. **WCCI** provides an ideal forum for discussion of these issues, given that it is the largest technical event in the field of Computational Intelligence (CI) at large, resulting from the convergence of **IJCNN, FUZZ-IEEE, and CEC.**
+            The session creates a dedicated venue for this rapidly growing field, attracting high-quality submissions and fostering new collaborations. **WCCI** provides an ideal forum for this discussion, as it is the world’s premier event in computational intelligence, resulting from the convergence of **IJCNN** (International Joint Conference on Neural Networks), **IEEE CEC** (Congress on Evolutionary Computation), and **FUZZ-IEEE** (International Conference on Fuzzy Systems).
         </p>
     </section>
     
     <section>
         <h2>Special Activity: Open Discussion Slot (ODS)</h2>
         <p class="ods-paragraph">
-            The special session will further enhance participant engagement and foster deeper dialogue through an **Open Discussion Slot (ODS)**. This will be a facilitated, interactive **30-minute discussion** led by the session chairs, immediately following all scheduled paper presentations. The ODS is designed as a dynamic forum for attendees to share insights, raise critical questions, and collectively **brainstorm solutions**. This format aims to bridge the gap between theoretical research and practical challenges, encouraging new collaborations and helping to **identify future research directions** in XAI for diverse data modalities.
+            To enhance engagement, the session will incorporate a **30-minute Open Discussion Slot (ODS)**, facilitated by the session chairs, following the paper presentations. This interactive forum allows attendees to share insights, raise critical questions, and collectively brainstorm solutions. The ODS is designed to bridge the gap between theoretical research and practical challenges, encouraging new collaborations and identifying future research directions in XAI.
         </p>
     </section>
 
@@ -279,21 +265,51 @@
         <h2>Topics of Interest</h2>
         <ul class="topics">
             <li>Novel XAI methodologies for image, audio, and time-series data</li>
-            <li>Comparative studies and **benchmarking** of interpretable models</li>
-            <li>Metrics for **human-in-the-loop** explainability</li>
+            <li>Comparative studies and benchmarking of interpretable models</li>
+            <li>Metrics for human-in-the-loop explainability</li>
             <li>Fusion and evaluation of multimodal explanations</li>
-            <li>Auditing and **bias quantification** in explanations</li>
+            <li>Auditing and bias quantification in explanations</li>
             <li>Causal and counterfactual explainability techniques</li>
-            <li>XAI for **fuzzy and evolutionary systems**</li>
+            <li>XAI for fuzzy and evolutionary systems</li>
             <li>Benchmark datasets and standardized evaluation protocols</li>
         </ul>
     </section>
 
+    <section>
+        <h2>Submission and Deadlines</h2>
+        <table class="deadlines-table">
+            <thead>
+                <tr>
+                    <th>Event</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Paper Submission Deadline</td>
+                    <td>31 January 2026</td>
+                </tr>
+                <tr>
+                    <td>Paper Acceptance Notification Date</td>
+                    <td>15 March 2026</td>
+                </tr>
+                <tr>
+                    <td>WCCI Conference Dates</td>
+                    <td>22 - 26 June 2026</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="submission-info">
+            <p>All papers must be submitted through the WCCI 2026 online submission system. For questions or more information, please email Imen JDEY at: **imen.jdey@ieee.org**</p>
+        </div>
+    </section>
+
     <div class="cta-container">
         <div class="cta">
-            **Call for Papers:** Submissions follow WCCI 2026 peer review process.
+            The World's Premier Event in Computational Intelligence.
             <br>
-            For more details, visit the main conference website: <a href="https://attend.ieee.org/wcci-2026/">https://attend.ieee.org/wcci-2026/</a>
+            Visit the main conference website for submission details: <a href="https://attend.ieee.org/wcci-2026/">https://attend.ieee.org/wcci-2026/</a>
         </div>
     </div>
 </div>
