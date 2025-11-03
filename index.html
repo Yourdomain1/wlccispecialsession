@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WCCI 2026 Special Session – Advances in Trustworthy XAI</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+Pro:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+Pro:wght@600;700&display=swap" rel="stylesheet">
 <style>
     :root {
         --blue: #005eb8;
@@ -23,73 +23,78 @@
 
     .page {
         max-width: 800px;
-        margin: 15px auto;
-        padding: 15px 25px;
+        margin: 25px auto; /* Increased margin */
+        padding: 20px 30px; /* Increased padding */
         border: 1px solid #ddd;
-        border-radius: 6px;
-        font-size: 13px;
-        line-height: 1.4;
+        border-radius: 8px; /* Slightly rounder */
+        font-size: 14px; /* Increased base font size */
+        line-height: 1.5; /* Increased line height for better readability */
     }
 
     img.banner {
         width: 100%;
         height: auto; 
-        border-radius: 4px;
-        margin-bottom: 10px;
+        border-radius: 6px; /* Slightly rounder */
+        margin-bottom: 15px; /* Increased margin */
     }
 
     header {
         text-align: center;
-        border-bottom: 2px solid var(--blue);
-        padding-bottom: 8px;
-        margin-bottom: 12px;
+        border-bottom: 3px solid var(--blue); /* Thicker line */
+        padding-bottom: 10px;
+        margin-bottom: 18px; /* Increased margin */
     }
 
     .badge {
         background: var(--blue);
         color: white;
-        padding: 3px 8px;
-        border-radius: 10px;
-        font-size: 11px;
+        padding: 4px 10px; /* Slightly larger badge */
+        border-radius: 12px;
+        font-size: 12px;
+        font-weight: 500;
         display: inline-block;
-        margin-bottom: 6px;
+        margin-bottom: 8px;
     }
 
     h1 {
         font-family: 'Source Serif Pro', serif;
-        font-size: 16px;
-        font-weight: 600;
+        font-size: 22px; /* Increased size for prominence */
+        font-weight: 700; /* Bolder */
         color: var(--blue);
         margin: 0;
+        line-height: 1.2;
     }
 
     section {
-        margin-bottom: 15px;
+        margin-bottom: 20px;
     }
 
     h2 {
         font-family: 'Source Serif Pro', serif;
-        font-size: 14px;
+        font-size: 16px; /* Increased size */
+        font-weight: 600;
         color: var(--blue);
-        margin: 8px 0 5px;
+        margin: 10px 0 6px;
         border-bottom: 1px solid var(--light-blue);
-        display: inline-block;
+        padding-bottom: 2px;
+        display: block; /* Use full width for clarity */
     }
 
     ul {
-        margin: 4px 0 4px 16px;
+        margin: 6px 0 6px 20px;
         padding: 0;
     }
 
     li {
-        margin-bottom: 2px;
+        margin-bottom: 4px; /* More space between list items */
     }
 
     .organizers {
         background: var(--light-blue);
-        padding: 8px;
-        border-radius: 4px;
-        font-size: 12px;
+        padding: 10px;
+        border-radius: 6px;
+        font-size: 13px; /* Slightly larger in this block */
+        line-height: 1.5;
     }
 
     .organizers strong {
@@ -97,117 +102,130 @@
     }
 
     .organizers p {
-        margin: 2px 0;
+        margin: 3px 0;
     }
 
     .abstract-text {
-        font-size: 13px;
-        line-height: 1.4;
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 10px;
     }
 
     .topics {
         columns: 2;
-        column-gap: 15px;
-        font-size: 13px;
+        column-gap: 20px; /* More column gap */
+        font-size: 14px;
+    }
+
+    .cta-container {
+        margin-top: 20px;
+        text-align: center;
     }
 
     .cta {
         background: var(--blue);
         color: white;
         text-align: center;
-        padding: 8px;
-        border-radius: 4px;
-        font-size: 12px;
-        margin-top: 15px;
+        padding: 12px; /* Larger padding for emphasis */
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 500;
+        display: block;
+        margin: 15px 0 0;
     }
 
     a {
         color: #fff;
         text-decoration: underline;
+        font-weight: 600;
+    }
+
+    /* ODS specific styling */
+    .ods-paragraph {
+        background: var(--light-blue);
+        padding: 10px 15px;
+        border-left: 3px solid var(--blue);
+        border-radius: 4px;
+        font-size: 13px;
+        margin: 15px 0;
+        line-height: 1.5;
+    }
+    .ods-paragraph strong {
+        color: var(--blue);
     }
 
     /* ========================================================= */
-    /* STYLES SPÉCIFIQUES À L'IMPRESSION (@media print) */
+    /* PRINT STYLES */
     /* ========================================================= */
     @media print {
         .page {
             border: none;
             margin: 0;
-            padding: 5mm 6mm; /* RÉDUCTION AGRESSIVE */
-            font-size: 9.5pt; /* RÉDUCTION */
-            line-height: 1.2; /* SERRÉ */
+            padding: 8mm 6mm; 
+            font-size: 10pt; 
+            line-height: 1.3; 
         }
         
-        /* Bannière */
+        /* Banner */
         img.banner {
-            max-height: 60px;
-            margin-bottom: 4px; 
+            max-height: 70px; /* Slightly larger */
+            margin-bottom: 6px; 
             -webkit-print-color-adjust: exact !important; 
             print-color-adjust: exact !important;
         }
 
-        /* Suppression des couleurs de fond pour l'impression */
-        .organizers, .cta {
+        /* Color removal/Border tweaks */
+        .organizers, .cta, .ods-paragraph {
             background: none !important;
             padding: 0;
             border: 1px solid #ccc !important;
+            border-left: 3px solid #333 !important; /* Make ODS line black */
         }
+        .organizers { border: 1px solid #ccc !important; }
+        .cta { border: 1px solid #ccc !important; }
 
-        /* Titres */
+        /* Titles */
         header {
-            padding-bottom: 4px;
-            margin-bottom: 8px;
-            border-bottom: 1px solid #333; /* Rendre la ligne plus visible */
+            padding-bottom: 6px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #333; 
         }
         h1 {
-            font-size: 13pt; 
+            font-size: 14pt; 
             margin-bottom: 3px;
         }
         h2 {
-            font-size: 11pt;
-            margin: 6pt 0 3pt;
-            border-bottom: none;
+            font-size: 12pt;
+            margin: 8pt 0 4pt;
+            border-bottom: 1px dashed #999;
         }
 
-        /* Contenu et Listes */
+        /* Content and Lists */
         section {
-             margin-bottom: 8px; /* RÉDUCTION */
+             margin-bottom: 10px; 
         }
 
-        .organizers, .abstract-text, .topics li {
-            font-size: 8.5pt; /* RÉDUCTION */
-            line-height: 1.2;
-        }
-
-        .organizers p {
-            margin: 1pt 0;
-        }
-        
-        .organizers strong {
-            color: black; /* S'assurer que le gras s'affiche bien */
+        .organizers, .abstract-text, .topics li, .ods-paragraph {
+            font-size: 9.5pt; 
+            line-height: 1.3;
         }
 
         .topics {
-            columns: 2 !important; 
-            column-gap: 8px; /* RÉDUCTION */
-            -webkit-column-break-inside: avoid;
-            page-break-inside: avoid;
-            break-inside: avoid;
+            columns: 1 !important; 
         }
 
-        /* CTA et Badges */
+        /* CTA and Badges */
         .badge {
-            font-size: 8pt;
-            padding: 2px 5px;
+            font-size: 9pt;
+            padding: 2px 6px;
             -webkit-print-color-adjust: exact !important; 
             print-color-adjust: exact !important;
         }
         .cta {
-            font-size: 9pt;
-            padding: 6px;
-            margin-top: 8px; /* RÉDUCTION */
+            font-size: 10pt;
+            padding: 8px;
+            margin-top: 10px; 
         }
-        /* Rendre les liens noirs et sans soulignement confus */
         .cta a {
             color: black;
             text-decoration: none;
@@ -222,7 +240,7 @@
 </head>
 <body>
 <div class="page">
-    <img src="wcci-banner.jpg" alt="IEEE WCCI 2026" class="banner">
+    
 
     <header>
         <div class="badge">IEEE WCCI 2026 Special Session</div>
@@ -241,38 +259,42 @@
     </section>
 
     <section>
-        <h2>Abstract</h2>
+        <h2>Abstract and Rationale</h2>
         <p class="abstract-text">
-            This special session aims to advance <strong>methodological rigor and benchmarking in eXplainable AI (XAI)</strong>
-            across diverse data modalities—image, audio, tabular, and multimodal contexts.
-            It invites research that develops, compares, and evaluates novel XAI techniques to
-            strengthen transparency and trust in computational intelligence.
+            This special session addresses the crucial need for **methodological rigor and standardized benchmarking in eXplainable AI (XAI)** across diverse data modalities, including image, audio, tabular, and multimodal contexts. We invite research that develops, compares, and rigorously evaluates novel XAI techniques to strengthen **transparency and trust** in computational intelligence systems.
         </p>
-        <ul class="abstract-text">
-            <li>Novel XAI methods tailored to different data modalities</li>
-            <li>Comparative studies and benchmarking of interpretable models</li>
-            <li>Standardized evaluation metrics and protocols for explanations</li>
-        </ul>
+        <p class="abstract-text">
+            The session will create a dedicated venue for this rapidly growing and critical field, attracting high-quality submissions and fostering new collaborations. **WCCI** provides an ideal forum for discussion of these issues, given that it is the largest technical event in the field of Computational Intelligence (CI) at large, resulting from the convergence of **IJCNN, FUZZ-IEEE, and CEC.**
+        </p>
+    </section>
+    
+    <section>
+        <h2>Special Activity: Open Discussion Slot (ODS)</h2>
+        <p class="ods-paragraph">
+            The special session will further enhance participant engagement and foster deeper dialogue through an **Open Discussion Slot (ODS)**. This will be a facilitated, interactive **30-minute discussion** led by the session chairs, immediately following all scheduled paper presentations. The ODS is designed as a dynamic forum for attendees to share insights, raise critical questions, and collectively **brainstorm solutions**. This format aims to bridge the gap between theoretical research and practical challenges, encouraging new collaborations and helping to **identify future research directions** in XAI for diverse data modalities.
+        </p>
     </section>
 
     <section>
         <h2>Topics of Interest</h2>
         <ul class="topics">
-            <li>XAI methodologies for image, audio, and time-series data</li>
-            <li>Comparative benchmarking of interpretable models</li>
+            <li>Novel XAI methodologies for image, audio, and time-series data</li>
+            <li>Comparative studies and **benchmarking** of interpretable models</li>
+            <li>Metrics for **human-in-the-loop** explainability</li>
             <li>Fusion and evaluation of multimodal explanations</li>
-            <li>Metrics for human-in-the-loop explainability</li>
-            <li>Auditing and bias quantification in explanations</li>
-            <li>Causal and counterfactual explainability</li>
-            <li>XAI for fuzzy and evolutionary systems</li>
-            <li>Benchmark datasets and evaluation protocols</li>
+            <li>Auditing and **bias quantification** in explanations</li>
+            <li>Causal and counterfactual explainability techniques</li>
+            <li>XAI for **fuzzy and evolutionary systems**</li>
+            <li>Benchmark datasets and standardized evaluation protocols</li>
         </ul>
     </section>
 
-    <div class="cta">
-        <strong>Call for Papers:</strong> Submissions follow WCCI 2026 peer review.
-        <br>
-        Visit <a href="https://attend.ieee.org/wcci-2026/">https://attend.ieee.org/wcci-2026/</a> for details.
+    <div class="cta-container">
+        <div class="cta">
+            **Call for Papers:** Submissions follow WCCI 2026 peer review process.
+            <br>
+            For more details, visit the main conference website: <a href="https://attend.ieee.org/wcci-2026/">https://attend.ieee.org/wcci-2026/</a>
+        </div>
     </div>
 </div>
 </body>
