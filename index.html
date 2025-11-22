@@ -112,7 +112,6 @@ h2 {
     margin-bottom: 6px;
 }
 
-/* Mobile: single column topics */
 @media (max-width: 600px) {
     .topics {
         columns: 1;
@@ -120,38 +119,41 @@ h2 {
 }
 
 /* ---------------------------------------------------------- */
-/* ODS PARAGRAPH */
+/* TIMELINE STYLES */
 /* ---------------------------------------------------------- */
-.ods-paragraph {
-    background: var(--light-blue);
-    padding: 12px 16px;
-    border-left: 4px solid var(--blue);
-    border-radius: 6px;
-    font-size: 14px;
-    margin: 15px 0;
+.timeline {
+    position: relative;
+    margin: 30px 0;
+    padding-left: 30px;
+    border-left: 3px solid var(--blue);
 }
 
-/* ---------------------------------------------------------- */
-/* DEADLINES TABLE */
-/* ---------------------------------------------------------- */
-.deadlines-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-    font-size: 14px;
+.timeline-item {
+    position: relative;
+    margin-bottom: 25px;
 }
 
-.deadlines-table th,
-.deadlines-table td {
-    border: 1px solid #ccc;
-    padding: 8px 10px;
-    text-align: left;
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    background: var(--blue);
+    border-radius: 50%;
+    border: 3px solid #fff;
 }
 
-.deadlines-table th {
-    background: var(--light-blue);
-    color: var(--blue);
+.timeline-item h4 {
+    margin: 0 0 4px;
+    font-size: 16px;
     font-weight: 600;
+}
+
+.timeline-item p {
+    margin: 0;
+    font-size: 14px;
 }
 
 /* ---------------------------------------------------------- */
@@ -161,6 +163,25 @@ a {
     color: var(--blue);
     font-weight: 600;
     text-decoration: none;
+}
+
+/* ---------------------------------------------------------- */
+/* FOOTER WITH LOGOS */
+/* ---------------------------------------------------------- */
+footer {
+    margin-top: 40px;
+    padding-top: 15px;
+    border-top: 2px solid var(--blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+footer img {
+    height: 50px;
+    object-fit: contain;
 }
 
 /* ---------------------------------------------------------- */
@@ -192,9 +213,8 @@ a {
     }
 
     .organizers,
-    .ods-paragraph {
+    .timeline-item {
         background: none !important;
-        border-left: 3px solid #555 !important;
         padding: 6px !important;
     }
 
@@ -203,16 +223,8 @@ a {
         font-size: 10pt;
     }
 
-    .deadlines-table th,
-    .deadlines-table td {
-        border: 1px solid #666 !important;
-        padding: 5px !important;
-        font-size: 10pt;
-    }
-
-    /* Hide non-essential information on print */
-    a {
-        text-decoration: underline;
+    footer img {
+        height: 40px;
     }
 }
 </style>
@@ -270,43 +282,37 @@ a {
             <a href="https://attend.ieee.org/wcci-2026/">WCCI 2026 Website</a>
         </p>
 
-        <!-- IMPORTANT DATES -->
+        <!-- TIMELINE -->
         <h2>Important Dates & Deadlines</h2>
-
-        <table class="deadlines-table">
-            <tr><th colspan="2">January 2026</th></tr>
-            <tr>
-                <td>31 January – Paper submission deadline</td>
-                <td><strong>23:59 (Anywhere on Earth, UTC-12)</strong><br>No extension will be given.</td>
-            </tr>
-
-            <tr><th colspan="2">March 2026</th></tr>
-            <tr>
-                <td>15 March – Paper acceptance notification</td>
-                <td></td>
-            </tr>
-
-            <tr><th colspan="2">April 2026</th></tr>
-            <tr>
-                <td>15 April – Camera-ready papers due</td>
-                <td></td>
-            </tr>
-
-            <tr><th colspan="2">June 2026</th></tr>
-            <tr>
-                <td>21 June – Tutorials</td><td></td>
-            </tr>
-            <tr>
-                <td>24 June – Industry Day</td><td></td>
-            </tr>
-            <tr>
-                <td>22–26 June – Conference</td><td></td>
-            </tr>
-        </table>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h4>31 January 2026</h4>
+                <p>Paper submission deadline – 23:59 UTC-12 (no extension will be given)</p>
+            </div>
+            <div class="timeline-item">
+                <h4>15 March 2026</h4>
+                <p>Paper acceptance notification</p>
+            </div>
+            <div class="timeline-item">
+                <h4>15 April 2026</h4>
+                <p>Camera-ready papers due</p>
+            </div>
+            <div class="timeline-item">
+                <h4>21 June 2026</h4>
+                <p>Tutorials</p>
+            </div>
+            <div class="timeline-item">
+                <h4>24 June 2026</h4>
+                <p>Industry Day</p>
+            </div>
+            <div class="timeline-item">
+                <h4>22–26 June 2026</h4>
+                <p>Conference</p>
+            </div>
+        </div>
 
         <!-- COMMITTEE -->
         <h2>Committee</h2>
-
         <div class="organizers">
             <p><strong>Organizing Committee</strong></p>
             <p>
@@ -322,6 +328,14 @@ a {
         </div>
 
     </section>
+
+    <!-- FOOTER WITH LOGOS -->
+    <footer>
+        <img src="sfax-university-logo.png" alt="Sfax University Logo">
+        <img src="regim-logo.png" alt="REGIM Lab Logo">
+        <img src="fsegs-logo.png" alt="FSEGS Sfax Logo">
+        <img src="iit-indore-logo.png" alt="IIT Indore Logo">
+    </footer>
 
 </div>
 </body>
