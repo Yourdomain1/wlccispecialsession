@@ -133,16 +133,27 @@ h2 {
     margin-bottom: 25px;
 }
 
+.timeline {
+    position: relative;
+    margin: 30px 0;
+    padding-left: 40px;  /* augmente l'espace entre le trait et le texte */
+    border-left: 3px solid var(--blue);
+}
+
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: -8px;      /* slightly closer to the line */
+    left: -15px;      /* bullet décalé vers la gauche */
     top: 0;
-    width: 8px;     /* smaller bullet */
-    height: 8px;    /* smaller bullet */
+    width: 12px;      /* taille du bullet */
+    height: 12px;
     background: var(--blue);
     border-radius: 50%;
-    border: 2px solid #fff;  /* thinner border */
+    border: 2px solid #fff;
+}
+
+.timeline-item p {
+    margin-left: 0;   /* on n’a plus besoin de margin-left sur le texte */
 }
 .timeline-item h4 {
     margin: 0 0 4px;
